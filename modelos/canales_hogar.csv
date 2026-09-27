@@ -1,31 +1,31 @@
 modelo,variable,efecto (%),p-valor
-Salario por hora (1) solo hogar,Hijos propios de 0 a 5 años,4.471339373510541,0.0030993970410755404
-Salario por hora (1) solo hogar,Hijos propios de 6 a 17 años,1.8964877550526005,0.012259555831693898
-Salario por hora (1) solo hogar,Realiza las tareas de la casa,0.7009577778227527,0.6194358968204636
-Salario por hora (1) solo hogar,Personas por cuarto para dormir,-14.585500790693695,2.465937592440435e-66
-Salario por hora (1) solo hogar,Clima educativo de otros adultos del hogar (años),3.860410489729049,1.860769120401101e-41
-Salario por hora (1) solo hogar,Años de educación de la pareja,6.844370796744559,2.586109912469409e-131
-"Salario por hora (2) + educación, experiencia y aglomerado",Hijos propios de 0 a 5 años,6.801536136733088,1.8347946745784523e-06
-"Salario por hora (2) + educación, experiencia y aglomerado",Hijos propios de 6 a 17 años,2.09920439545912,0.006288677475397402
-"Salario por hora (2) + educación, experiencia y aglomerado",Realiza las tareas de la casa,-1.7746350079427708,0.18480841790198732
-"Salario por hora (2) + educación, experiencia y aglomerado",Personas por cuarto para dormir,-8.174883308876947,4.032556826395815e-24
-"Salario por hora (2) + educación, experiencia y aglomerado",Clima educativo de otros adultos del hogar (años),1.7710008013053669,6.84539781967485e-11
-"Salario por hora (2) + educación, experiencia y aglomerado",Años de educación de la pareja,2.3552065434735203,4.994946558265935e-18
-Salario por hora (3) + características del empleo,Hijos propios de 0 a 5 años,4.028844810949828,0.0010208848248821785
-Salario por hora (3) + características del empleo,Hijos propios de 6 a 17 años,2.294022292483233,0.0004821466650940154
-Salario por hora (3) + características del empleo,Realiza las tareas de la casa,-0.8009304598912914,0.5065962839188421
-Salario por hora (3) + características del empleo,Personas por cuarto para dormir,-4.510584466903889,3.2238599863580585e-10
-Salario por hora (3) + características del empleo,Clima educativo de otros adultos del hogar (años),0.9067902930463667,8.705467582796844e-05
-Salario por hora (3) + características del empleo,Años de educación de la pareja,1.4901241093370876,1.306211054287276e-10
-Horas semanales (con 2),Hijos propios de 0 a 5 años,-2.8091586512022593,0.0509096625415188
-Horas semanales (con 2),Hijos propios de 6 a 17 años,-5.938627422433873,2.3115014543959936e-13
-Horas semanales (con 2),Realiza las tareas de la casa,-12.028605642984125,3.9020032780237266e-21
-Horas semanales (con 2),Personas por cuarto para dormir,-2.246702917643273,0.02653439095772754
-Horas semanales (con 2),Clima educativo de otros adultos del hogar (años),0.18818807954288364,0.5429204285499103
-Horas semanales (con 2),Años de educación de la pareja,1.87615544447155,3.499163895190702e-11
-Salario mensual (con 2),Hijos propios de 0 a 5 años,3.8013115447311563,0.04470846824860207
-Salario mensual (con 2),Hijos propios de 6 a 17 años,-3.964086954856416,6.297865304871587e-05
-Salario mensual (con 2),Realiza las tareas de la casa,-13.589776804219111,1.1313549309692849e-17
-Salario mensual (con 2),Personas por cuarto para dormir,-10.237920884705742,5.974795032008854e-19
-Salario mensual (con 2),Clima educativo de otros adultos del hogar (años),1.9625216932449119,3.460153301361311e-08
-Salario mensual (con 2),Años de educación de la pareja,4.275549323738992,1.0363729150676934e-28
+Salario por hora (1) solo hogar,Hijos propios de 0 a 5 años,4.471339373510519,0.0030993970410756353
+Salario por hora (1) solo hogar,Hijos propios de 6 a 17 años,1.8964877550526005,0.012259555831694247
+Salario por hora (1) solo hogar,Realiza las tareas de la casa,0.7009577778227749,0.6194358968204534
+Salario por hora (1) solo hogar,Personas por cuarto para dormir,-14.585500790693684,2.465937592446131e-66
+Salario por hora (1) solo hogar,Clima educativo de otros adultos del hogar (años),3.8604104897290714,1.8607691204139157e-41
+Salario por hora (1) solo hogar,Años de educación de la pareja,6.844370796744581,2.58610991245645e-131
+"Salario por hora (2) + educación, experiencia y aglomerado",Hijos propios de 0 a 5 años,6.80153613673391,1.8347946745708237e-06
+"Salario por hora (2) + educación, experiencia y aglomerado",Hijos propios de 6 a 17 años,2.09920439545912,0.006288677475396666
+"Salario por hora (2) + educación, experiencia y aglomerado",Realiza las tareas de la casa,-1.7746350079440698,0.1848084179016678
+"Salario por hora (2) + educación, experiencia y aglomerado",Personas por cuarto para dormir,-8.174883308876634,4.032556826405882e-24
+"Salario por hora (2) + educación, experiencia y aglomerado",Clima educativo de otros adultos del hogar (años),1.771000801305389,6.845397819660901e-11
+"Salario por hora (2) + educación, experiencia y aglomerado",Años de educación de la pareja,2.3552065434735425,4.994946558239007e-18
+Salario por hora (3) + características del empleo,Hijos propios de 0 a 5 años,4.028844810949184,0.0010208848248840629
+Salario por hora (3) + características del empleo,Hijos propios de 6 a 17 años,2.2940222924832554,0.00048214666509393715
+Salario por hora (3) + características del empleo,Realiza las tareas de la casa,-0.800930459891025,0.5065962839189829
+Salario por hora (3) + características del empleo,Personas por cuarto para dormir,-4.510584466903911,3.223859986357532e-10
+Salario por hora (3) + características del empleo,Clima educativo de otros adultos del hogar (años),0.9067902930463445,8.705467582802859e-05
+Salario por hora (3) + características del empleo,Años de educación de la pareja,1.4901241093370654,1.3062110542875614e-10
+Horas semanales (con 2),Hijos propios de 0 a 5 años,-2.8091586512027145,0.05090966254148241
+Horas semanales (con 2),Hijos propios de 6 a 17 años,-5.938627422433829,2.311501454398143e-13
+Horas semanales (con 2),Realiza las tareas de la casa,-12.028605642983392,3.902003278068098e-21
+Horas semanales (con 2),Personas por cuarto para dormir,-2.2467029176434727,0.0265343909577195
+Horas semanales (con 2),Clima educativo de otros adultos del hogar (años),0.18818807954288364,0.5429204285499174
+Horas semanales (con 2),Años de educación de la pareja,1.87615544447155,3.4991638951844e-11
+Salario mensual (con 2),Hijos propios de 0 a 5 años,3.801311544731467,0.04470846824858454
+Salario mensual (con 2),Hijos propios de 6 a 17 años,-3.964086954856383,6.297865304872353e-05
+Salario mensual (con 2),Realiza las tareas de la casa,-13.589776804219532,1.1313549309685928e-17
+Salario mensual (con 2),Personas por cuarto para dormir,-10.23792088470563,5.974795032015733e-19
+Salario mensual (con 2),Clima educativo de otros adultos del hogar (años),1.9625216932449119,3.460153301358681e-08
+Salario mensual (con 2),Años de educación de la pareja,4.275549323739014,1.036372915065652e-28
