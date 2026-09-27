@@ -1,0 +1,10 @@
+*.csv
+*.zip
+*.parquet
+*.txt
+mlruns/
+mlflow.db
+__pycache__/
+.ipynb_checkpoints/
+!requirements.txt
+!modelos/*.csv

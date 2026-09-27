@@ -1,0 +1,98 @@
+variable,descripción,bloque,carácter,tipo
+AGLOMERADO,Aglomerado urbano,Territorio y migración,Estructural (política pública),categórica
+CH10,Asiste o asistió a un establecimiento educativo,Capital humano,Accionable (persona),categórica
+PP03C,Tiene más de un empleo,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP3F_TOT,Horas en otras ocupaciones,Condiciones de trabajo,Accionable (empresa y política laboral),numérica
+PP03G,Quería trabajar más horas,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP03H,Disponibilidad para trabajar más horas,Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP03I,Buscó trabajar más horas,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP03J,Buscó otro empleo,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+INTENSI,Intensidad de la ocupación,Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP04B1,Servicio doméstico en casa de familia,Ocupación y empresa,Accionable (empresa),binaria (1 = sí)
+PP04B2,Cantidad de casas en que trabaja (servicio doméstico),Ocupación y empresa,Accionable (empresa),numérica
+PP07C,Empleo con fecha de finalización,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP07E,"Período de prueba, beca o pasantía",Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP07F1,Le dan de comer en el trabajo,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP07F3,Le dan productos o mercadería,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP07F4,"Otros beneficios (celular, auto, pasajes)",Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP07F5,No recibe beneficios en especie,Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP07H,Descuento jubilatorio (empleo registrado),Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP07J,Turno de trabajo,Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP07K,Comprobante de pago,Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP09A,"Trabaja en CABA, GBA o ambos",Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP07B1_01,Cobra un plan social por este trabajo,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+SECTOR,"Sector formal, informal u hogares (INDEC)",Ocupación y empresa,Accionable (empresa),categórica
+PP03K,Motivo de búsqueda de otro empleo,Condiciones de trabajo,Accionable (empresa y política laboral),categórica
+PP04A1,"Nivel del Estado (nacional, provincial, municipal)",Ocupación y empresa,Accionable (empresa),categórica
+PP07F1_1,Usa sus propias maquinarias o equipos,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+PP07L,El recibo abarca todo el sueldo,Condiciones de trabajo,Accionable (empresa y política laboral),binaria (1 = sí)
+menores_6,Menores de 6 años en el hogar,Hogar y cuidados,Estructural (política pública),numérica
+menores_18,Menores de 18 años en el hogar,Hogar y cuidados,Estructural (política pública),numérica
+mayores_65,Mayores de 65 años en el hogar,Hogar y cuidados,Estructural (política pública),numérica
+educ_pareja,Años de educación de la pareja,Hogar y cuidados,Estructural (política pública),numérica
+pareja_ocupada,La pareja está ocupada,Hogar y cuidados,Estructural (política pública),numérica
+clima_educativo,Clima educativo de otros adultos del hogar (años),Hogar y cuidados,Estructural (política pública),numérica
+hijos_propios_menores_6,Hijos propios menores de 6 años,Hogar y cuidados,Estructural (política pública),numérica
+hijos_propios_menores_18,Hijos propios menores de 18 años,Hogar y cuidados,Estructural (política pública),numérica
+IV1,Tipo de vivienda,Vivienda y hábitat,Estructural (política pública),categórica
+IV2,Ambientes de la vivienda,Vivienda y hábitat,Estructural (política pública),numérica
+IV3,Material de los pisos,Vivienda y hábitat,Estructural (política pública),categórica
+IV4,Cubierta del techo,Vivienda y hábitat,Estructural (política pública),categórica
+IV5,Techo con cielorraso,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+IV7,Fuente del agua,Vivienda y hábitat,Estructural (política pública),categórica
+IV9,Ubicación del baño,Vivienda y hábitat,Estructural (política pública),categórica
+IV10,Tipo de inodoro,Vivienda y hábitat,Estructural (política pública),categórica
+IV11,Desagüe del baño,Vivienda y hábitat,Estructural (política pública),categórica
+IV12_1,Vivienda cerca de basural,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+IV12_2,Vivienda en zona inundable,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II2,Cuartos para dormir,Vivienda y hábitat,Estructural (política pública),numérica
+II3,Usa un ambiente para trabajar,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II4_1,Tiene cuarto de cocina,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II4_2,Tiene lavadero,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II4_3,Tiene garage,Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II5,"Duermen en cocina, lavadero o garage",Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II6,"Usa cocina, lavadero o garage para trabajar",Vivienda y hábitat,Estructural (política pública),binaria (1 = sí)
+II7,Tenencia de la vivienda,Vivienda y hábitat,Estructural (política pública),categórica
+II8,Combustible para cocinar,Vivienda y hábitat,Estructural (política pública),categórica
+V2,Hogar con jubilación o pensión,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V22_01,Retroactivo de jubilación,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V5_02,Hogar con otro plan social,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V6,"Recibe mercadería del gobierno, iglesias, etc.",Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V7,Recibe mercadería de familiares o vecinos,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V11_01,Hogar con beca de estudio del gobierno,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V12,Recibe cuota alimentaria o ayuda de personas fuera del hogar,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V13,Gastó ahorros,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V14,Pidió préstamos a familiares o amigos,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V15,Pidió préstamos a bancos o financieras,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V16,Compra en cuotas o al fiado,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V17,Vendió pertenencias,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+IX_TOT,Miembros del hogar,Hogar y cuidados,Estructural (política pública),numérica
+IX_MEN10,Miembros menores de 10 años,Hogar y cuidados,Estructural (política pública),numérica
+V5_01,Hogar con AUH o Asignación por Embarazo,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V22_02,Retroactivo de jubilación de ama de casa,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+V22_03,Retroactivo de otras pensiones,Estrategias del hogar,Estructural (política pública),binaria (1 = sí)
+anios_educ,Años de educación,Capital humano,Accionable (persona),numérica
+exp_pot,Experiencia potencial (años),Capital humano,Accionable (persona),numérica
+exp_pot2,Experiencia potencial al cuadrado,Capital humano,Accionable (persona),numérica
+parentesco,Parentesco con el jefe/a de hogar,Hogar y cuidados,Estructural (política pública),categórica
+estado_civil,Estado civil,Hogar y cuidados,Estructural (política pública),categórica
+cobertura_salud,Cobertura de salud,Hogar y cuidados,Estructural (política pública),categórica
+lugar_nacimiento,Lugar de nacimiento,Territorio y migración,Estructural (política pública),categórica
+residencia_5_anios,Dónde vivía hace 5 años,Territorio y migración,Estructural (política pública),categórica
+cno_caracter,"Carácter de la ocupación (CNO, 2 dígitos)",Ocupación y empresa,Accionable (empresa),categórica
+cno_jerarquia,Jerarquía de la ocupación,Ocupación y empresa,Accionable (empresa),categórica
+cno_tecnologia,Tecnología que utiliza,Ocupación y empresa,Accionable (empresa),categórica
+calificacion,Calificación de la ocupación,Ocupación y empresa,Accionable (empresa),categórica
+caes_division,"Actividad del establecimiento (CAES, 2 dígitos)",Ocupación y empresa,Accionable (empresa),categórica
+rama,Rama de actividad,Ocupación y empresa,Accionable (empresa),categórica
+tamano_establecimiento,Personas que trabajan en el establecimiento,Ocupación y empresa,Accionable (empresa),categórica
+sector,Sector estatal o privado,Ocupación y empresa,Accionable (empresa),categórica
+lugar_trabajo,Lugar donde realiza sus tareas,Ocupación y empresa,Accionable (empresa),categórica
+antiguedad,Antigüedad en el empleo (tramos de 1 a 6),Capital humano,Accionable (persona),numérica
+jornada_parcial,Jornada parcial (< 35 horas),Condiciones de trabajo,Accionable (empresa y política laboral),numérica
+hacinamiento,Personas por cuarto para dormir,Vivienda y hábitat,Estructural (política pública),numérica
+otros_ocupados_hogar,Otros ocupados en el hogar,Hogar y cuidados,Estructural (política pública),numérica
+otras_mujeres_adultas,Otras mujeres adultas en el hogar,Hogar y cuidados,Estructural (política pública),numérica
+realiza_tareas_casa,Realiza las tareas de la casa,Hogar y cuidados,Estructural (política pública),numérica
+servicio_domestico_hogar,El hogar tiene servicio doméstico,Hogar y cuidados,Estructural (política pública),numérica
+recibe_ayuda_tareas,Otras personas ayudan con las tareas,Hogar y cuidados,Estructural (política pública),numérica

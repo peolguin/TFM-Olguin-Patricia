@@ -1,0 +1,27 @@
+variable,|SHAP| medio,variable_base,descripción,bloque,carácter,% de la importancia
+AGLOMERADO,0.11162910980034658,AGLOMERADO,Aglomerado urbano,Territorio y migración,Estructural (política pública),12.12765988192919
+PP07H,0.10025369940024038,PP07H,Descuento jubilatorio (empleo registrado),Condiciones de trabajo,Accionable (empresa y política laboral),10.891807436302864
+jornada_parcial,0.09270210256257924,jornada_parcial,Jornada parcial (< 35 horas),Condiciones de trabajo,Accionable (empresa y política laboral),10.071383461083435
+anios_educ,0.08750934117793514,anios_educ,Años de educación,Capital humano,Accionable (persona),9.5072291465537
+PP07K,0.08327746783846783,PP07K,Comprobante de pago,Condiciones de trabajo,Accionable (empresa y política laboral),9.04746806258325
+caes_division,0.07966691663664008,caes_division,"Actividad del establecimiento (CAES, 2 dígitos)",Ocupación y empresa,Accionable (empresa),8.655208937339186
+cno_caracter,0.06403209119550965,cno_caracter,"Carácter de la ocupación (CNO, 2 dígitos)",Ocupación y empresa,Accionable (empresa),6.956603209832304
+INTENSI,0.05535502687803314,INTENSI,Intensidad de la ocupación,Condiciones de trabajo,Accionable (empresa y política laboral),6.013905691199468
+calificacion,0.039645494082725816,calificacion,Calificación de la ocupación,Ocupación y empresa,Accionable (empresa),4.307183573767442
+parentesco,0.03962705366815485,parentesco,Parentesco con el jefe/a de hogar,Hogar y cuidados,Estructural (política pública),4.305180161965643
+tamano_establecimiento,0.03584361093419494,tamano_establecimiento,Personas que trabajan en el establecimiento,Ocupación y empresa,Accionable (empresa),3.8941376772384224
+antiguedad,0.021254197829028328,antiguedad,Antigüedad en el empleo (tramos de 1 a 6),Capital humano,Accionable (persona),2.3091081062521654
+IV2,0.015591917037661367,IV2,Ambientes de la vivienda,Vivienda y hábitat,Estructural (política pública),1.6939440534661228
+V14,0.013898451795474122,V14,Pidió préstamos a familiares o amigos,Estrategias del hogar,Estructural (política pública),1.5099618420532714
+exp_pot,0.012691003228749652,exp_pot,Experiencia potencial (años),Capital humano,Accionable (persona),1.3787816725764406
+PP07B1_01,0.010280939611665499,PP07B1_01,Cobra un plan social por este trabajo,Condiciones de trabajo,Accionable (empresa y política laboral),1.116946458678516
+PP04A1,0.00879211356041857,PP04A1,"Nivel del Estado (nacional, provincial, municipal)",Ocupación y empresa,Accionable (empresa),0.9551967501556019
+servicio_domestico_hogar,0.007907876930611245,servicio_domestico_hogar,El hogar tiene servicio doméstico,Hogar y cuidados,Estructural (política pública),0.8591311170906568
+IV4,0.00775138256209428,IV4,Cubierta del techo,Vivienda y hábitat,Estructural (política pública),0.8421291856212978
+V17,0.007660332729589198,V17,Vendió pertenencias,Estrategias del hogar,Estructural (política pública),0.8322373088258704
+PP3F_TOT,0.006101312664153828,PP3F_TOT,Horas en otras ocupaciones,Condiciones de trabajo,Accionable (empresa y política laboral),0.6628615506878757
+PP07F1,0.005362591274906328,PP07F1,Le dan de comer en el trabajo,Condiciones de trabajo,Accionable (empresa y política laboral),0.5826050497418108
+estado_civil,0.005035273694997333,estado_civil,Estado civil,Hogar y cuidados,Estructural (política pública),0.547044466220073
+hijos_propios_menores_18,0.004996311022921409,hijos_propios_menores_18,Hijos propios menores de 18 años,Hogar y cuidados,Estructural (política pública),0.5428114661014384
+exp_pot2,0.002450499466830283,exp_pot2,Experiencia potencial al cuadrado,Capital humano,Accionable (persona),0.2662282636466409
+PP04B2,0.0011344135748432764,PP04B2,Cantidad de casas en que trabaja (servicio doméstico),Ocupación y empresa,Accionable (empresa),0.12324546908731118

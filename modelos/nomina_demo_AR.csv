@@ -1,0 +1,251 @@
+id_empleada,salario_horario,jornada_parcial,AGLOMERADO,INTENSI,caes_division,anios_educ,PP07K,cno_caracter,PP07H,PP07B1_01,exp_pot,tamano_establecimiento,PP04A1,calificacion,parentesco,IV2,PP3F_TOT,PP07F1,IV4,V14,hijos_propios_menores_18,servicio_domestico_hogar,estado_civil,V17,PP04B2,antiguedad,exp_pot2
+DEMO-001,6782.95,0.0,código 34,código 3,86,17.0,código 1,40,1.0,0.0,36.0,Más de 40,código 0,Técnica,Jefa,1.0,0.0,1.0,código 9,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1296.0
+DEMO-002,5523.26,0.0,código 26,código 2,86,12.0,código 1,40,1.0,0.0,16.0,Más de 40,código 0,Operativa,Hija,3.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,6.0,256.0
+DEMO-003,6298.45,1.0,código 10,código 2,86,13.0,código 1,10,1.0,0.0,28.0,Más de 40,código 0,Operativa,Jefa,1.0,16.0,1.0,código 3,0.0,0,0.0,Soltera,0.0,0.0,5.0,784.0
+DEMO-004,12458.47,0.0,código 31,código 3,86,17.0,código 1,40,1.0,0.0,17.0,Más de 40,código 2,Profesional,Cónyuge,4.0,0.0,0.0,código 4,0.0,1,0.0,Casada,0.0,0.0,5.0,289.0
+DEMO-005,7751.94,1.0,código 22,código 2,86,17.0,código 1,40,1.0,0.0,5.0,Más de 40,código 2,Técnica,Cónyuge,2.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,6.0,25.0
+DEMO-006,7441.86,1.0,código 19,código 2,88,15.0,código 1,46,1.0,1.0,15.0,Sin dato,código 2,Técnica,Hija,3.0,0.0,0.0,código 4,0.0,1,0.0,Separada o divorciada,0.0,0.0,5.0,225.0
+DEMO-007,11074.2,0.0,código 33,código 2,86,15.0,código 1,42,1.0,0.0,18.0,6 a 40,código 0,Operativa,Jefa,2.0,0.0,0.0,código 9,1.0,1,0.0,Soltera,0.0,0.0,6.0,324.0
+DEMO-008,12919.9,1.0,código 5,código 3,86,15.0,código 1,40,1.0,0.0,34.0,Hasta 5,código 2,Técnica,Cónyuge,3.0,25.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,6.0,1156.0
+DEMO-009,9302.33,1.0,código 29,código 2,86,17.0,código 1,40,1.0,0.0,30.0,Más de 40,código 2,Técnica,Cónyuge,4.0,0.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,6.0,900.0
+DEMO-010,5813.95,1.0,código 33,código 2,86,14.0,código 4,10,0.0,0.0,1.0,6 a 40,código 0,Operativa,Hija,2.0,0.0,0.0,código 2,1.0,0,0.0,Soltera,0.0,0.0,5.0,1.0
+DEMO-011,6976.74,0.0,código 9,código 2,86,15.0,código 1,40,1.0,0.0,19.0,Más de 40,código 2,Técnica,Cónyuge,4.0,0.0,0.0,código 2,0.0,3,0.0,Unida,0.0,0.0,6.0,361.0
+DEMO-012,2699.34,0.0,código 22,código 3,87,12.0,código 2,57,0.0,0.0,4.0,6 a 40,código 0,Operativa,Otro familiar o no familiar,2.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,16.0
+DEMO-013,5684.75,0.0,código 33,código 2,86,12.0,código 1,53,1.0,0.0,31.0,Más de 40,código 0,Operativa,Jefa,3.0,0.0,1.0,código 3,1.0,1,0.0,Soltera,0.0,0.0,6.0,961.0
+DEMO-014,4651.16,1.0,código 18,código 2,86,7.0,código 1,56,1.0,0.0,39.0,6 a 40,código 2,Operativa,Cónyuge,5.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,1521.0
+DEMO-015,5453.49,0.0,código 33,código 2,86,17.0,código 1,40,1.0,0.0,34.0,Más de 40,código 2,Técnica,Jefa,4.0,0.0,1.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,1156.0
+DEMO-016,8720.93,0.0,código 9,código 2,86,12.0,código 1,10,1.0,0.0,17.0,Más de 40,código 0,Operativa,Cónyuge,6.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,6.0,289.0
+DEMO-017,10465.12,0.0,código 23,código 2,86,12.0,código 1,56,1.0,0.0,23.0,Más de 40,código 2,No calificada,Hija,5.0,0.0,0.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,6.0,529.0
+DEMO-018,16611.3,1.0,código 32,código 2,86,19.0,código 4,40,0.0,0.0,3.0,6 a 40,código 0,Profesional,Jefa,3.0,21.0,0.0,código 1,0.0,0,0.0,Separada o divorciada,0.0,0.0,5.0,9.0
+DEMO-019,3875.97,0.0,código 10,código 3,86,17.0,código 1,40,1.0,0.0,32.0,Más de 40,código 0,Técnica,Jefa,3.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,1024.0
+DEMO-020,12403.1,1.0,código 5,código 2,87,15.0,código 1,53,1.0,0.0,35.0,6 a 40,código 0,Operativa,Cónyuge,3.0,0.0,1.0,código 2,0.0,0,0.0,Casada,0.0,0.0,6.0,1225.0
+DEMO-021,4215.12,0.0,código 19,código 3,86,15.0,código 1,40,1.0,0.0,18.0,Más de 40,código 2,Técnica,Jefa,5.0,0.0,0.0,código 4,1.0,2,0.0,Unida,1.0,0.0,6.0,324.0
+DEMO-022,4306.63,0.0,código 36,código 3,86,12.0,código 1,57,1.0,0.0,10.0,6 a 40,código 0,Técnica,Otro familiar o no familiar,5.0,0.0,0.0,código 1,1.0,0,0.0,Soltera,0.0,0.0,5.0,100.0
+DEMO-023,8186.05,1.0,código 15,código 2,87,12.0,código 1,46,1.0,0.0,29.0,Hasta 5,código 2,Operativa,Jefa,5.0,0.0,1.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,6.0,841.0
+DEMO-024,6976.74,0.0,código 22,código 2,86,15.0,código 1,40,1.0,0.0,27.0,Más de 40,código 0,Técnica,Jefa,4.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,6.0,729.0
+DEMO-025,7751.94,1.0,código 33,código 2,86,15.0,código 1,40,1.0,0.0,20.0,Más de 40,código 2,Técnica,Cónyuge,3.0,0.0,0.0,código 2,1.0,2,0.0,Unida,0.0,0.0,6.0,400.0
+DEMO-026,4844.96,0.0,código 38,código 3,86,17.0,código 3,40,0.0,0.0,10.0,Más de 40,código 0,Profesional,Cónyuge,4.0,19.0,0.0,código 1,0.0,2,1.0,Casada,0.0,0.0,5.0,100.0
+DEMO-027,13953.49,1.0,código 18,código 2,86,17.0,código 1,40,1.0,0.0,31.0,6 a 40,código 2,Profesional,Jefa,3.0,20.0,0.0,código 1,0.0,0,1.0,Soltera,0.0,0.0,6.0,961.0
+DEMO-028,7558.14,0.0,código 36,código 2,86,17.0,código 1,10,1.0,0.0,16.0,6 a 40,código 0,Operativa,Hija,3.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,256.0
+DEMO-029,3875.97,0.0,código 19,código 3,86,17.0,código 1,42,1.0,0.0,17.0,Más de 40,código 2,Técnica,Cónyuge,2.0,0.0,0.0,código 2,0.0,1,0.0,Casada,0.0,0.0,6.0,289.0
+DEMO-030,4186.05,1.0,código 25,código 2,86,12.0,código 1,10,1.0,0.0,20.0,Más de 40,código 2,Operativa,Hija,3.0,0.0,0.0,código 2,1.0,2,0.0,Soltera,0.0,0.0,5.0,400.0
+DEMO-031,10077.52,1.0,código 17,código 2,86,12.0,código 1,10,1.0,0.0,17.0,Más de 40,código 2,Operativa,Cónyuge,2.0,0.0,0.0,código 1,0.0,2,0.0,Casada,0.0,0.0,6.0,289.0
+DEMO-032,3391.47,0.0,código 13,código 3,86,19.0,código 3,40,0.0,0.0,3.0,Más de 40,código 0,Profesional,Jefa,4.0,25.0,0.0,código 9,0.0,0,0.0,Soltera,0.0,0.0,5.0,9.0
+DEMO-033,17441.86,1.0,código 14,código 2,86,15.0,código 1,41,1.0,0.0,10.0,6 a 40,código 0,Técnica,Hija,3.0,0.0,0.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,5.0,100.0
+DEMO-034,4651.16,0.0,código 22,código 3,86,17.0,código 1,42,1.0,0.0,12.0,Más de 40,código 2,Operativa,Jefa,3.0,16.0,0.0,código 1,0.0,2,0.0,Unida,0.0,0.0,5.0,144.0
+DEMO-035,4651.16,1.0,código 5,código 1,86,12.0,código 4,20,0.0,0.0,33.0,Sin dato,código 0,Operativa,Jefa,3.0,0.0,0.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,5.0,1089.0
+DEMO-036,6201.55,1.0,código 20,código 2,87,12.0,código 4,57,0.0,0.0,12.0,6 a 40,código 0,Técnica,Jefa,2.0,0.0,0.0,código 4,1.0,1,0.0,Soltera,0.0,0.0,5.0,144.0
+DEMO-037,11627.91,0.0,código 10,código 3,88,14.0,código 1,80,1.0,0.0,27.0,Más de 40,código 0,Operativa,Cónyuge,3.0,25.0,0.0,código 5,0.0,0,0.0,Casada,0.0,0.0,6.0,729.0
+DEMO-038,5232.56,0.0,código 15,código 2,86,17.0,código 1,40,1.0,0.0,33.0,6 a 40,código 0,Técnica,Cónyuge,2.0,0.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,6.0,1089.0
+DEMO-039,15503.88,1.0,código 29,código 2,86,17.0,código 1,40,1.0,0.0,21.0,Más de 40,código 2,Técnica,Jefa,4.0,12.0,0.0,código 3,1.0,3,0.0,Unida,1.0,0.0,6.0,441.0
+DEMO-040,5426.36,1.0,código 25,código 2,86,17.0,código 1,40,1.0,0.0,19.0,6 a 40,código 2,Técnica,Cónyuge,5.0,0.0,0.0,código 1,0.0,0,0.0,Unida,0.0,0.0,6.0,361.0
+DEMO-041,13953.49,1.0,código 33,código 2,86,15.0,código 3,40,0.0,0.0,30.0,Más de 40,código 3,Técnica,Jefa,3.0,0.0,0.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,4.0,900.0
+DEMO-042,2906.98,1.0,código 29,código 1,88,7.0,código 4,53,0.0,0.0,22.0,6 a 40,código 0,Operativa,Hija,2.0,0.0,1.0,código 4,0.0,2,0.0,Soltera,0.0,0.0,6.0,484.0
+DEMO-043,10465.12,0.0,código 36,código 2,86,17.0,código 1,31,1.0,0.0,36.0,Más de 40,código 2,Profesional,Cónyuge,4.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,5.0,1296.0
+DEMO-044,9689.92,0.0,código 7,código 3,86,17.0,código 1,40,1.0,0.0,15.0,Más de 40,código 2,Profesional,Cónyuge,4.0,0.0,0.0,código 4,0.0,1,0.0,Unida,0.0,0.0,6.0,225.0
+DEMO-045,4360.47,0.0,código 6,código 3,86,17.0,código 1,40,1.0,0.0,16.0,Más de 40,código 2,Técnica,Jefa,2.0,0.0,0.0,código 3,0.0,2,0.0,Casada,0.0,0.0,6.0,256.0
+DEMO-046,29069.77,1.0,código 17,código 2,86,17.0,código 1,40,1.0,0.0,22.0,6 a 40,código 0,Profesional,Jefa,4.0,0.0,0.0,código 4,0.0,3,0.0,Separada o divorciada,0.0,0.0,5.0,484.0
+DEMO-047,2325.58,1.0,código 22,código 2,86,13.0,código 4,10,0.0,0.0,2.0,Hasta 5,código 0,Operativa,Otro familiar o no familiar,2.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,4.0
+DEMO-048,5813.95,0.0,código 5,código 2,87,7.0,código 1,53,1.0,0.0,35.0,6 a 40,código 0,Operativa,Cónyuge,2.0,0.0,1.0,código 4,0.0,1,0.0,Casada,0.0,0.0,6.0,1225.0
+DEMO-049,3720.93,1.0,código 22,código 1,86,12.0,código 1,10,1.0,0.0,30.0,6 a 40,código 2,Operativa,Hija,4.0,0.0,0.0,código 1,1.0,2,0.0,Soltera,0.0,0.0,6.0,900.0
+DEMO-050,3488.37,0.0,código 20,código 2,87,10.0,código 3,57,0.0,0.0,37.0,6 a 40,código 0,Operativa,Jefa,2.0,0.0,0.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,5.0,1369.0
+DEMO-051,3488.37,0.0,código 10,código 2,87,5.0,código 4,40,0.0,0.0,31.0,6 a 40,código 0,Técnica,Jefa,2.0,0.0,1.0,código 1,0.0,2,0.0,Separada o divorciada,0.0,0.0,3.0,961.0
+DEMO-052,3100.78,1.0,código 38,código 1,86,13.0,código 1,10,1.0,0.0,21.0,Más de 40,código 3,Operativa,Jefa,3.0,0.0,0.0,código 3,0.0,0,0.0,Soltera,0.0,0.0,6.0,441.0
+DEMO-053,4152.82,0.0,código 33,código 3,86,13.0,código 1,40,1.0,0.0,28.0,Más de 40,código 0,Técnica,Jefa,4.0,0.0,1.0,código 4,0.0,1,0.0,Separada o divorciada,1.0,0.0,5.0,784.0
+DEMO-054,2325.58,1.0,código 27,código 2,88,15.0,código 2,53,0.0,1.0,22.0,6 a 40,código 0,Operativa,Hija,6.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,4.0,484.0
+DEMO-055,7751.94,1.0,código 31,código 2,86,12.0,código 1,10,1.0,0.0,40.0,Más de 40,código 2,Operativa,Jefa,3.0,0.0,0.0,código 4,0.0,0,0.0,Separada o divorciada,1.0,0.0,5.0,1600.0
+DEMO-056,8720.93,0.0,código 4,código 2,86,15.0,código 1,10,1.0,0.0,36.0,6 a 40,código 2,Operativa,Cónyuge,3.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,1296.0
+DEMO-057,2325.58,1.0,código 8,código 2,86,15.0,código 4,40,0.0,1.0,34.0,6 a 40,código 2,Técnica,Jefa,2.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,1156.0
+DEMO-058,4306.63,0.0,código 4,código 3,86,7.0,código 1,56,1.0,0.0,23.0,Más de 40,código 3,No calificada,Jefa,2.0,0.0,1.0,código 3,1.0,1,0.0,Unida,1.0,0.0,6.0,529.0
+DEMO-059,1107.42,0.0,código 15,código 3,87,7.0,código 4,57,0.0,0.0,35.0,Hasta 5,código 0,Operativa,Jefa,2.0,0.0,0.0,código 1,0.0,0,0.0,Separada o divorciada,0.0,0.0,5.0,1225.0
+DEMO-060,5116.28,0.0,código 15,código 2,86,15.0,código 1,40,1.0,0.0,30.0,Más de 40,código 2,Técnica,Jefa,7.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,900.0
+DEMO-061,10943.91,1.0,código 33,código 2,86,9.0,código 1,10,1.0,0.0,26.0,Hasta 5,código 0,Operativa,Cónyuge,2.0,0.0,0.0,código 3,0.0,0,0.0,Unida,0.0,0.0,6.0,676.0
+DEMO-062,16860.47,1.0,código 6,código 2,86,8.0,código 1,56,1.0,0.0,40.0,Hasta 5,código 0,No calificada,Cónyuge,3.0,0.0,0.0,código 2,0.0,0,0.0,Casada,0.0,0.0,6.0,1600.0
+DEMO-063,4360.47,0.0,código 2,código 2,86,15.0,código 1,10,1.0,0.0,30.0,Más de 40,código 0,Operativa,Jefa,1.0,0.0,0.0,código 1,0.0,0,0.0,Viuda,0.0,0.0,6.0,900.0
+DEMO-064,7994.19,1.0,código 12,código 2,86,17.0,código 1,40,1.0,0.0,3.0,Más de 40,código 2,Técnica,Jefa,4.0,0.0,1.0,código 9,0.0,0,0.0,Unida,0.0,0.0,5.0,9.0
+DEMO-065,9302.33,1.0,código 38,código 2,86,15.0,código 1,40,1.0,0.0,37.0,6 a 40,código 2,Técnica,Jefa,2.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,1369.0
+DEMO-066,2325.58,1.0,código 93,código 2,88,9.0,código 4,53,0.0,0.0,35.0,6 a 40,código 0,Operativa,Cónyuge,1.0,0.0,1.0,código 1,0.0,1,0.0,Unida,0.0,0.0,5.0,1225.0
+DEMO-067,4844.96,0.0,código 12,código 3,86,17.0,código 1,40,1.0,0.0,36.0,6 a 40,código 2,Técnica,Jefa,3.0,25.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,6.0,1296.0
+DEMO-068,7267.44,0.0,código 33,código 3,86,12.0,código 1,53,1.0,0.0,14.0,Más de 40,código 3,No calificada,Hija,3.0,0.0,1.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,196.0
+DEMO-069,3986.71,0.0,código 33,código 3,86,17.0,código 4,03,0.0,0.0,15.0,Más de 40,código 2,Profesional,Hija,3.0,20.0,1.0,código 4,1.0,1,0.0,Soltera,0.0,0.0,5.0,225.0
+DEMO-070,5813.95,0.0,código 91,código 2,86,17.0,código 1,40,1.0,0.0,19.0,Más de 40,código 2,Técnica,Jefa,5.0,0.0,0.0,código 1,0.0,1,0.0,Casada,0.0,0.0,6.0,361.0
+DEMO-071,6890.61,1.0,código 19,código 2,86,17.0,código 1,40,1.0,0.0,12.0,Más de 40,código 2,Técnica,Hija,4.0,0.0,0.0,código 2,0.0,1,0.0,Soltera,0.0,0.0,6.0,144.0
+DEMO-072,5232.56,0.0,código 10,código 2,86,15.0,código 1,40,1.0,0.0,20.0,Más de 40,código 2,Técnica,Cónyuge,4.0,0.0,0.0,código 1,0.0,2,0.0,Casada,0.0,0.0,6.0,400.0
+DEMO-073,4941.86,0.0,código 7,código 2,86,12.0,código 1,10,1.0,0.0,20.0,Sin dato,código 0,Operativa,Cónyuge,4.0,0.0,0.0,código 4,0.0,0,0.0,Unida,0.0,0.0,5.0,400.0
+DEMO-074,4651.16,0.0,código 18,código 2,86,15.0,código 1,42,1.0,0.0,7.0,Hasta 5,código 0,Técnica,Jefa,4.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,49.0
+DEMO-075,14806.2,1.0,código 31,código 3,86,12.0,código 1,40,1.0,0.0,16.0,6 a 40,código 2,Técnica,Jefa,3.0,25.0,1.0,código 4,0.0,2,0.0,Soltera,1.0,0.0,5.0,256.0
+DEMO-076,13289.04,1.0,código 22,código 1,86,17.0,código 1,40,1.0,0.0,22.0,Más de 40,código 2,Técnica,Jefa,3.0,0.0,0.0,código 1,1.0,0,0.0,Soltera,0.0,0.0,6.0,484.0
+DEMO-077,4651.16,0.0,código 15,código 2,86,17.0,código 2,40,1.0,0.0,17.0,Sin dato,código 0,Técnica,Hija,3.0,0.0,0.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,6.0,289.0
+DEMO-078,6201.55,1.0,código 9,código 2,86,12.0,código 1,10,1.0,0.0,30.0,Hasta 5,código 0,Operativa,Cónyuge,2.0,0.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,5.0,900.0
+DEMO-079,8720.93,1.0,código 13,código 2,86,17.0,código 3,40,0.0,0.0,4.0,6 a 40,código 0,Profesional,Hija,3.0,0.0,0.0,código 2,0.0,0,0.0,Soltera,0.0,0.0,2.0,16.0
+DEMO-080,3875.97,1.0,código 19,código 2,86,17.0,código 3,40,1.0,0.0,12.0,6 a 40,código 0,Técnica,Otro familiar o no familiar,4.0,0.0,0.0,código 2,0.0,0,0.0,Casada,0.0,0.0,5.0,144.0
+DEMO-081,15503.88,1.0,código 91,código 2,86,17.0,código 1,40,1.0,0.0,25.0,Más de 40,código 2,Profesional,Jefa,4.0,12.0,0.0,código 3,0.0,1,0.0,Separada o divorciada,0.0,0.0,6.0,625.0
+DEMO-082,5329.46,0.0,código 34,código 3,86,14.0,código 1,10,1.0,0.0,5.0,6 a 40,código 0,Operativa,Hija,3.0,0.0,0.0,código 3,0.0,0,0.0,Soltera,0.0,0.0,5.0,25.0
+DEMO-083,3488.37,0.0,código 13,código 3,86,12.0,código 4,41,0.0,0.0,4.0,6 a 40,código 2,Operativa,Hija,3.0,10.0,0.0,código 1,0.0,0,0.0,Soltera,1.0,0.0,5.0,16.0
+DEMO-084,3565.89,1.0,código 26,código 2,86,12.0,código 4,10,0.0,1.0,26.0,Más de 40,código 2,Operativa,Cónyuge,4.0,0.0,0.0,código 3,0.0,0,0.0,Casada,0.0,0.0,6.0,676.0
+DEMO-085,6782.95,0.0,código 36,código 3,86,15.0,código 3,40,0.0,0.0,15.0,Más de 40,código 2,Técnica,Jefa,1.0,0.0,0.0,código 1,0.0,1,0.0,Separada o divorciada,1.0,0.0,5.0,225.0
+DEMO-086,4844.96,0.0,código 19,código 3,86,17.0,código 1,40,1.0,0.0,17.0,Más de 40,código 2,Profesional,Cónyuge,5.0,0.0,0.0,código 1,0.0,2,0.0,Casada,0.0,0.0,5.0,289.0
+DEMO-087,8139.53,0.0,código 36,código 2,86,12.0,código 1,10,1.0,0.0,35.0,Más de 40,código 0,Operativa,Cónyuge,5.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,1225.0
+DEMO-088,3612.96,0.0,código 26,código 3,86,14.0,código 1,56,1.0,0.0,16.0,6 a 40,código 0,No calificada,Jefa,2.0,0.0,0.0,código 4,0.0,3,0.0,Unida,0.0,0.0,6.0,256.0
+DEMO-089,8720.93,0.0,código 32,código 2,86,17.0,código 1,40,1.0,0.0,7.0,Más de 40,Sin dato,Profesional,Cónyuge,3.0,0.0,0.0,código 9,0.0,0,0.0,Unida,0.0,0.0,5.0,49.0
+DEMO-090,4134.37,0.0,código 4,código 2,86,12.0,código 1,56,1.0,0.0,10.0,Más de 40,código 0,No calificada,Cónyuge,2.0,0.0,0.0,código 9,0.0,0,0.0,Unida,0.0,0.0,4.0,100.0
+DEMO-091,4069.77,1.0,código 22,código 1,87,12.0,código 4,40,0.0,0.0,7.0,6 a 40,código 0,Operativa,Otro familiar o no familiar,2.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,49.0
+DEMO-092,7751.94,1.0,código 6,código 2,86,15.0,código 1,42,1.0,0.0,29.0,Más de 40,código 2,Profesional,Cónyuge,2.0,0.0,0.0,código 4,0.0,2,0.0,Unida,0.0,0.0,6.0,841.0
+DEMO-093,20348.84,1.0,código 33,código 2,86,16.0,código 1,20,1.0,0.0,5.0,Más de 40,código 0,Operativa,Hija,4.0,0.0,1.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,3.0,25.0
+DEMO-094,8139.53,0.0,código 31,código 2,86,12.0,código 1,56,1.0,0.0,7.0,Más de 40,código 0,No calificada,Cónyuge,3.0,0.0,0.0,código 4,1.0,1,0.0,Unida,1.0,0.0,5.0,49.0
+DEMO-095,8720.93,0.0,código 6,código 2,86,17.0,código 1,40,1.0,0.0,13.0,Sin dato,código 0,Profesional,Hija,2.0,0.0,0.0,código 2,0.0,0,0.0,Soltera,0.0,0.0,6.0,169.0
+DEMO-096,11627.91,1.0,código 6,código 2,86,12.0,código 1,10,1.0,0.0,27.0,Sin dato,código 2,Operativa,Cónyuge,3.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,729.0
+DEMO-097,3488.37,1.0,código 8,código 1,88,12.0,código 2,53,0.0,0.0,18.0,6 a 40,código 2,Operativa,Jefa,1.0,0.0,0.0,código 4,0.0,2,0.0,Soltera,0.0,0.0,2.0,324.0
+DEMO-098,9302.33,1.0,código 14,código 2,86,12.0,código 1,10,1.0,0.0,17.0,Hasta 5,código 0,Operativa,Otro familiar o no familiar,3.0,0.0,0.0,código 4,0.0,0,0.0,Unida,1.0,0.0,6.0,289.0
+DEMO-099,6395.35,1.0,código 13,código 2,86,17.0,código 1,20,1.0,0.0,13.0,Sin dato,código 0,Operativa,Hija,2.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,1.0,0.0,6.0,169.0
+DEMO-100,10335.92,1.0,código 4,código 1,87,15.0,código 3,53,0.0,0.0,36.0,6 a 40,código 2,Operativa,Jefa,3.0,10.0,0.0,código 1,0.0,0,0.0,Unida,1.0,0.0,2.0,1296.0
+DEMO-101,7751.94,1.0,código 7,código 2,86,17.0,código 1,30,1.0,0.0,27.0,Más de 40,código 2,Operativa,Jefa,3.0,0.0,0.0,código 4,0.0,0,1.0,Soltera,0.0,0.0,6.0,729.0
+DEMO-102,2782.39,0.0,código 34,código 3,88,12.0,código 4,57,0.0,0.0,40.0,Hasta 5,código 0,Operativa,Cónyuge,5.0,0.0,0.0,código 2,0.0,0,0.0,Casada,0.0,0.0,2.0,1600.0
+DEMO-103,11627.91,0.0,código 20,código 2,86,17.0,código 1,40,1.0,0.0,16.0,Más de 40,código 2,Técnica,Jefa,3.0,0.0,0.0,código 2,0.0,2,0.0,Soltera,0.0,0.0,6.0,256.0
+DEMO-104,6201.55,1.0,código 22,código 2,86,7.0,código 1,56,1.0,0.0,37.0,Sin dato,código 0,No calificada,Hija,2.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,5.0,1369.0
+DEMO-105,2906.98,0.0,código 2,código 3,87,7.0,código 1,56,1.0,0.0,40.0,6 a 40,código 0,No calificada,Otro familiar o no familiar,3.0,0.0,1.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1600.0
+DEMO-106,3149.22,0.0,código 4,código 3,87,6.0,código 1,56,1.0,0.0,25.0,6 a 40,código 0,No calificada,Jefa,3.0,0.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,3.0,625.0
+DEMO-107,5813.95,0.0,código 23,código 3,86,15.0,código 1,40,1.0,0.0,20.0,Más de 40,código 0,Técnica,Otro familiar o no familiar,7.0,0.0,0.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,400.0
+DEMO-108,4651.16,1.0,código 3,código 2,86,12.0,código 1,40,1.0,0.0,11.0,6 a 40,código 3,Profesional,Jefa,3.0,0.0,0.0,código 4,0.0,1,0.0,Casada,0.0,0.0,5.0,121.0
+DEMO-109,5232.56,0.0,código 30,código 2,86,10.0,código 1,10,1.0,0.0,27.0,6 a 40,código 2,Operativa,Jefa,2.0,0.0,0.0,código 2,0.0,1,0.0,Soltera,0.0,0.0,6.0,729.0
+DEMO-110,3875.97,0.0,código 26,código 3,86,17.0,código 1,40,1.0,0.0,9.0,6 a 40,código 2,Técnica,Jefa,4.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,81.0
+DEMO-111,5813.95,0.0,código 20,código 2,86,15.0,código 1,10,1.0,0.0,19.0,Más de 40,código 2,Operativa,Jefa,3.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,361.0
+DEMO-112,3875.97,1.0,código 29,código 2,86,12.0,código 4,56,0.0,0.0,10.0,6 a 40,código 0,No calificada,Hija,5.0,0.0,1.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,5.0,100.0
+DEMO-113,4593.02,0.0,código 15,código 2,86,12.0,código 1,56,1.0,0.0,37.0,Más de 40,código 0,No calificada,Cónyuge,3.0,0.0,0.0,código 4,0.0,1,0.0,Unida,0.0,0.0,6.0,1369.0
+DEMO-114,5315.61,0.0,código 29,código 2,86,15.0,código 1,10,1.0,0.0,39.0,6 a 40,código 2,Operativa,Jefa,4.0,0.0,1.0,código 4,0.0,0,0.0,Unida,0.0,0.0,6.0,1521.0
+DEMO-115,14534.88,0.0,código 3,código 3,86,17.0,código 1,40,1.0,0.0,24.0,Más de 40,código 3,Profesional,Jefa,6.0,0.0,1.0,código 1,1.0,3,0.0,Casada,0.0,0.0,6.0,576.0
+DEMO-116,9302.33,1.0,código 32,código 1,86,15.0,código 1,40,1.0,0.0,20.0,Más de 40,código 0,Técnica,Cónyuge,2.0,0.0,1.0,código 1,0.0,1,0.0,Casada,0.0,0.0,5.0,400.0
+DEMO-117,12919.9,0.0,código 4,código 2,86,17.0,código 1,40,1.0,0.0,22.0,6 a 40,código 3,Profesional,Cónyuge,4.0,8.0,0.0,código 1,0.0,2,0.0,Unida,0.0,0.0,6.0,484.0
+DEMO-118,10901.16,1.0,código 2,código 2,86,12.0,código 1,40,1.0,0.0,28.0,Más de 40,código 0,Técnica,Cónyuge,2.0,0.0,1.0,código 4,0.0,1,0.0,Casada,0.0,0.0,6.0,784.0
+DEMO-119,5116.28,1.0,código 25,código 2,86,17.0,código 1,46,1.0,0.0,21.0,6 a 40,código 2,Técnica,Jefa,4.0,0.0,0.0,código 1,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,441.0
+DEMO-120,11627.91,1.0,código 32,código 2,86,17.0,código 1,40,1.0,0.0,20.0,Más de 40,código 1,Técnica,Jefa,4.0,0.0,0.0,código 9,0.0,1,0.0,Soltera,1.0,0.0,6.0,400.0
+DEMO-121,1860.47,1.0,código 12,código 2,86,12.0,código 4,40,0.0,0.0,40.0,6 a 40,código 3,Técnica,Jefa,4.0,0.0,0.0,código 4,0.0,0,0.0,Unida,0.0,0.0,5.0,1600.0
+DEMO-122,7751.94,1.0,código 4,código 2,86,17.0,código 1,40,1.0,0.0,21.0,Más de 40,código 0,Técnica,Jefa,3.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,441.0
+DEMO-123,5813.95,1.0,código 4,código 2,86,12.0,código 3,10,0.0,0.0,40.0,6 a 40,código 0,Operativa,Cónyuge,4.0,0.0,0.0,código 1,0.0,1,0.0,Casada,0.0,0.0,6.0,1600.0
+DEMO-124,3391.47,0.0,código 23,código 3,86,15.0,código 1,40,1.0,0.0,11.0,Más de 40,código 2,Técnica,Jefa,3.0,0.0,0.0,código 2,0.0,0,0.0,Soltera,0.0,0.0,5.0,121.0
+DEMO-125,14211.89,1.0,código 33,código 2,86,17.0,código 1,40,1.0,0.0,29.0,6 a 40,código 3,Profesional,Jefa,2.0,6.0,0.0,código 2,1.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,841.0
+DEMO-126,4756.87,0.0,código 19,código 2,86,13.0,código 1,40,1.0,0.0,28.0,Más de 40,código 2,Técnica,Jefa,3.0,0.0,0.0,código 2,0.0,1,0.0,Viuda,0.0,0.0,6.0,784.0
+DEMO-127,8720.93,0.0,código 18,código 2,86,17.0,código 1,20,1.0,0.0,20.0,6 a 40,código 0,Profesional,Jefa,3.0,0.0,0.0,código 1,0.0,1,0.0,Soltera,0.0,0.0,6.0,400.0
+DEMO-128,19379.84,1.0,código 32,código 1,86,17.0,código 1,40,1.0,0.0,34.0,Más de 40,código 3,Profesional,Jefa,4.0,0.0,0.0,código 4,0.0,0,0.0,Casada,0.0,0.0,6.0,1156.0
+DEMO-129,13953.49,1.0,código 36,código 2,86,17.0,código 1,40,1.0,0.0,34.0,6 a 40,código 3,Profesional,Jefa,4.0,0.0,0.0,código 1,0.0,0,1.0,Separada o divorciada,0.0,0.0,6.0,1156.0
+DEMO-130,24806.2,1.0,código 26,código 3,86,17.0,código 1,40,1.0,0.0,32.0,Más de 40,código 2,Profesional,Jefa,6.0,20.0,0.0,código 1,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1024.0
+DEMO-131,3538.93,0.0,código 27,código 3,86,15.0,código 1,40,1.0,0.0,5.0,Más de 40,código 0,Técnica,Hija,3.0,0.0,0.0,código 7,0.0,0,0.0,Soltera,0.0,0.0,6.0,25.0
+DEMO-132,17441.86,0.0,código 32,código 2,86,15.0,código 1,30,1.0,0.0,22.0,Más de 40,código 0,Operativa,Cónyuge,4.0,0.0,1.0,código 9,0.0,1,1.0,Casada,0.0,0.0,6.0,484.0
+DEMO-133,3875.97,0.0,código 19,código 3,87,12.0,código 4,40,0.0,0.0,8.0,6 a 40,código 0,Operativa,Hija,5.0,0.0,0.0,código 4,1.0,1,0.0,Soltera,0.0,0.0,4.0,64.0
+DEMO-134,10077.52,1.0,código 6,código 2,86,10.0,código 1,10,1.0,0.0,25.0,Más de 40,código 2,Operativa,Jefa,3.0,0.0,0.0,código 4,0.0,2,0.0,Soltera,0.0,0.0,6.0,625.0
+DEMO-135,9302.33,0.0,código 93,código 2,86,15.0,código 1,56,1.0,0.0,14.0,6 a 40,código 0,No calificada,Jefa,4.0,0.0,0.0,código 3,0.0,4,0.0,Unida,0.0,0.0,6.0,196.0
+DEMO-136,8197.67,1.0,código 3,código 1,86,12.0,código 1,10,1.0,0.0,24.0,6 a 40,código 0,Operativa,Hija,5.0,0.0,0.0,código 2,0.0,3,0.0,Soltera,0.0,0.0,6.0,576.0
+DEMO-137,6540.7,0.0,código 91,código 3,86,10.0,código 1,56,1.0,0.0,29.0,6 a 40,código 0,No calificada,Jefa,4.0,0.0,1.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,841.0
+DEMO-138,10658.91,1.0,código 10,código 2,86,15.0,código 1,40,1.0,0.0,24.0,6 a 40,código 0,Técnica,Jefa,2.0,0.0,1.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,576.0
+DEMO-139,15697.67,0.0,código 17,código 2,86,19.0,código 1,40,1.0,0.0,23.0,6 a 40,código 2,Técnica,Jefa,4.0,0.0,0.0,código 1,0.0,1,0.0,Separada o divorciada,0.0,0.0,6.0,529.0
+DEMO-140,5813.95,0.0,código 29,código 2,87,15.0,código 1,20,1.0,0.0,30.0,Más de 40,código 2,Operativa,Jefa,4.0,0.0,1.0,código 2,0.0,1,0.0,Separada o divorciada,0.0,0.0,6.0,900.0
+DEMO-141,5232.56,0.0,código 26,código 2,86,17.0,código 1,40,1.0,0.0,10.0,Más de 40,código 0,Técnica,Cónyuge,1.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,5.0,100.0
+DEMO-142,3633.72,0.0,código 26,código 3,86,15.0,código 1,10,1.0,0.0,20.0,Más de 40,código 2,Operativa,Jefa,2.0,0.0,0.0,código 1,0.0,1,0.0,Soltera,0.0,0.0,5.0,400.0
+DEMO-143,5167.96,0.0,código 25,código 2,86,15.0,código 1,40,1.0,0.0,7.0,6 a 40,código 0,Técnica,Hija,3.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,49.0
+DEMO-144,24224.81,0.0,código 33,código 3,86,17.0,código 1,40,1.0,0.0,22.0,Más de 40,código 1,Técnica,Cónyuge,4.0,0.0,0.0,código 4,0.0,2,0.0,Unida,0.0,0.0,6.0,484.0
+DEMO-145,3875.97,0.0,código 7,código 3,86,12.0,código 1,56,1.0,0.0,12.0,Más de 40,código 0,No calificada,Cónyuge,4.0,0.0,1.0,código 4,0.0,1,0.0,Unida,0.0,0.0,6.0,144.0
+DEMO-146,7119.13,0.0,código 23,código 3,86,15.0,código 1,40,1.0,0.0,21.0,Más de 40,código 2,Técnica,Cónyuge,4.0,0.0,1.0,código 9,0.0,0,0.0,Unida,0.0,0.0,6.0,441.0
+DEMO-147,4228.33,0.0,código 10,código 2,88,10.0,código 3,46,0.0,0.0,31.0,Más de 40,código 2,Operativa,Jefa,3.0,0.0,0.0,código 1,1.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,961.0
+DEMO-148,3779.07,0.0,código 30,código 2,87,9.0,código 1,56,1.0,0.0,6.0,Sin dato,código 0,No calificada,Otro familiar o no familiar,3.0,0.0,0.0,código 4,1.0,0,0.0,Soltera,0.0,0.0,1.0,36.0
+DEMO-149,3391.47,0.0,código 22,código 3,86,12.0,código 1,56,1.0,0.0,28.0,Más de 40,código 0,No calificada,Cónyuge,4.0,0.0,0.0,código 1,0.0,2,0.0,Casada,1.0,0.0,5.0,784.0
+DEMO-150,9689.92,0.0,código 19,código 3,86,17.0,código 1,40,1.0,0.0,28.0,Más de 40,código 2,Profesional,Jefa,4.0,0.0,0.0,código 2,0.0,0,0.0,Unida,0.0,0.0,6.0,784.0
+DEMO-151,3280.73,0.0,código 26,código 3,86,12.0,código 1,56,1.0,0.0,37.0,Más de 40,código 2,No calificada,Jefa,3.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,1369.0
+DEMO-152,5116.28,0.0,código 32,código 3,86,15.0,código 1,40,1.0,0.0,33.0,Más de 40,código 0,Técnica,Cónyuge,1.0,0.0,0.0,código 9,0.0,0,0.0,Casada,0.0,0.0,6.0,1089.0
+DEMO-153,5813.95,0.0,código 23,código 3,86,17.0,código 3,40,0.0,0.0,5.0,Más de 40,código 0,Profesional,Hija,4.0,25.0,0.0,código 2,0.0,0,1.0,Soltera,0.0,0.0,5.0,25.0
+DEMO-154,8720.93,0.0,código 26,código 2,87,17.0,código 1,10,1.0,0.0,12.0,6 a 40,código 0,Operativa,Cónyuge,3.0,0.0,1.0,código 1,0.0,0,0.0,Unida,0.0,0.0,5.0,144.0
+DEMO-155,5523.26,0.0,código 10,código 2,86,15.0,código 1,40,1.0,0.0,17.0,Más de 40,código 0,Técnica,Cónyuge,3.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,5.0,289.0
+DEMO-156,2180.23,0.0,código 14,código 3,87,10.0,código 4,56,0.0,0.0,7.0,6 a 40,código 0,No calificada,Hija,3.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,5.0,49.0
+DEMO-157,13953.49,1.0,código 36,código 2,86,15.0,código 4,40,0.0,0.0,30.0,Hasta 5,código 0,Técnica,Jefa,2.0,0.0,0.0,código 2,0.0,0,0.0,Viuda,0.0,0.0,5.0,900.0
+DEMO-158,5668.6,1.0,código 12,código 2,86,15.0,código 1,40,1.0,0.0,35.0,Más de 40,código 2,Técnica,Otro familiar o no familiar,3.0,0.0,1.0,código 1,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1225.0
+DEMO-159,3488.37,0.0,código 23,código 2,86,17.0,código 1,40,1.0,0.0,23.0,Más de 40,código 0,Técnica,Hija,3.0,0.0,0.0,código 1,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,529.0
+DEMO-160,3488.37,1.0,código 30,código 1,88,15.0,código 4,31,0.0,1.0,12.0,6 a 40,código 3,Técnica,Cónyuge,2.0,0.0,0.0,código 2,1.0,0,0.0,Unida,0.0,0.0,5.0,144.0
+DEMO-161,4844.96,0.0,código 19,código 3,86,17.0,código 1,40,1.0,0.0,5.0,Más de 40,código 0,Profesional,Cónyuge,4.0,0.0,0.0,código 9,0.0,0,0.0,Casada,1.0,0.0,5.0,25.0
+DEMO-162,4429.68,0.0,código 19,código 2,86,15.0,código 1,40,1.0,0.0,33.0,6 a 40,código 0,Técnica,Jefa,3.0,0.0,0.0,código 2,0.0,0,0.0,Soltera,0.0,0.0,6.0,1089.0
+DEMO-163,11627.91,0.0,código 23,código 2,86,17.0,código 1,40,1.0,0.0,27.0,Más de 40,código 2,Profesional,Jefa,6.0,0.0,0.0,código 3,0.0,1,1.0,Casada,0.0,0.0,6.0,729.0
+DEMO-164,6046.51,0.0,código 29,código 2,86,15.0,código 1,40,1.0,0.0,15.0,Más de 40,código 0,Técnica,Cónyuge,4.0,0.0,0.0,código 4,0.0,1,1.0,Unida,0.0,0.0,6.0,225.0
+DEMO-165,12209.3,0.0,código 33,código 2,86,17.0,código 1,40,1.0,0.0,29.0,Más de 40,código 2,Técnica,Jefa,2.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,841.0
+DEMO-166,6697.67,1.0,código 25,código 1,86,17.0,código 1,10,1.0,0.0,21.0,Más de 40,código 3,Operativa,Cónyuge,3.0,0.0,0.0,código 2,0.0,2,0.0,Unida,0.0,0.0,6.0,441.0
+DEMO-167,7751.94,1.0,código 33,código 2,86,15.0,código 1,40,1.0,0.0,33.0,Más de 40,código 3,Profesional,Jefa,3.0,0.0,0.0,código 2,0.0,1,0.0,Casada,0.0,0.0,6.0,1089.0
+DEMO-168,4651.16,0.0,código 27,código 2,86,12.0,código 1,40,1.0,0.0,25.0,6 a 40,código 0,Técnica,Cónyuge,3.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,6.0,625.0
+DEMO-169,3720.93,1.0,código 25,código 2,86,12.0,código 2,40,0.0,0.0,15.0,6 a 40,código 2,Operativa,Cónyuge,5.0,0.0,0.0,código 1,0.0,2,0.0,Unida,0.0,0.0,6.0,225.0
+DEMO-170,7751.94,1.0,código 23,código 1,86,17.0,código 1,40,1.0,0.0,27.0,Más de 40,código 2,Operativa,Jefa,4.0,0.0,0.0,código 3,0.0,0,0.0,Unida,0.0,0.0,6.0,729.0
+DEMO-171,4069.77,0.0,código 14,código 3,86,17.0,código 1,40,1.0,0.0,24.0,Más de 40,código 2,Técnica,Jefa,4.0,0.0,0.0,código 4,0.0,2,0.0,Soltera,0.0,0.0,6.0,576.0
+DEMO-172,13953.49,1.0,código 29,código 2,86,19.0,código 1,40,1.0,0.0,30.0,Más de 40,código 0,Profesional,Jefa,3.0,0.0,0.0,código 4,0.0,1,0.0,Separada o divorciada,0.0,0.0,6.0,900.0
+DEMO-173,8720.93,1.0,código 22,código 2,86,12.0,código 1,20,1.0,0.0,27.0,6 a 40,código 0,Operativa,Jefa,3.0,0.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,6.0,729.0
+DEMO-174,4651.16,0.0,código 5,código 2,86,10.0,código 1,56,1.0,0.0,16.0,Más de 40,código 2,No calificada,Cónyuge,2.0,0.0,0.0,código 4,0.0,2,0.0,Unida,0.0,0.0,5.0,256.0
+DEMO-175,7751.94,1.0,código 10,código 2,86,15.0,código 3,40,0.0,0.0,22.0,6 a 40,código 0,Técnica,Jefa,5.0,0.0,0.0,código 3,0.0,2,0.0,Casada,0.0,0.0,6.0,484.0
+DEMO-176,11627.91,1.0,código 29,código 2,86,17.0,código 1,57,1.0,0.0,1.0,Más de 40,código 2,Profesional,Hija,3.0,0.0,1.0,código 4,0.0,1,0.0,Soltera,0.0,0.0,3.0,1.0
+DEMO-177,13289.04,1.0,código 2,código 1,86,16.0,código 4,40,0.0,0.0,18.0,6 a 40,código 0,Técnica,Jefa,3.0,0.0,0.0,código 3,0.0,1,0.0,Unida,0.0,0.0,6.0,324.0
+DEMO-178,5980.07,0.0,código 4,código 2,86,12.0,código 1,10,1.0,0.0,26.0,Hasta 5,código 0,Operativa,Cónyuge,3.0,0.0,0.0,código 2,0.0,2,0.0,Unida,0.0,0.0,6.0,676.0
+DEMO-179,6298.45,0.0,código 32,código 3,86,15.0,código 1,40,1.0,0.0,15.0,Más de 40,código 0,Técnica,Cónyuge,3.0,25.0,1.0,código 2,0.0,2,0.0,Unida,1.0,0.0,5.0,225.0
+DEMO-180,2491.69,0.0,código 30,código 3,86,17.0,código 1,40,1.0,0.0,26.0,Sin dato,código 2,Técnica,Jefa,2.0,25.0,0.0,código 2,0.0,1,0.0,Soltera,0.0,0.0,6.0,676.0
+DEMO-181,3058.14,0.0,código 14,código 2,86,17.0,código 1,40,1.0,0.0,17.0,6 a 40,código 2,Técnica,Cónyuge,4.0,0.0,0.0,código 4,0.0,3,0.0,Unida,0.0,0.0,2.0,289.0
+DEMO-182,9966.78,0.0,código 32,código 2,86,17.0,código 1,40,1.0,0.0,37.0,Más de 40,código 3,Técnica,Cónyuge,5.0,0.0,0.0,código 9,1.0,0,0.0,Casada,0.0,0.0,6.0,1369.0
+DEMO-183,6201.55,0.0,código 13,código 2,86,14.0,código 1,10,1.0,0.0,21.0,Más de 40,código 0,Operativa,Cónyuge,4.0,0.0,0.0,código 9,0.0,1,0.0,Unida,0.0,0.0,6.0,441.0
+DEMO-184,2699.34,0.0,código 22,código 3,87,12.0,código 2,57,0.0,0.0,7.0,6 a 40,código 0,Operativa,Jefa,2.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,49.0
+DEMO-185,5329.46,0.0,código 18,código 3,86,12.0,código 1,56,1.0,0.0,36.0,6 a 40,código 0,No calificada,Cónyuge,5.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,1296.0
+DEMO-186,4651.16,1.0,código 5,código 2,86,17.0,código 3,40,0.0,0.0,3.0,6 a 40,código 0,Técnica,Jefa,1.0,20.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,5.0,9.0
+DEMO-187,6976.74,0.0,código 26,código 2,86,15.0,código 1,10,1.0,0.0,24.0,Más de 40,código 0,Operativa,Jefa,2.0,0.0,0.0,código 1,1.0,1,0.0,Separada o divorciada,0.0,0.0,6.0,576.0
+DEMO-188,4941.86,0.0,código 6,código 2,86,15.0,código 1,10,1.0,0.0,37.0,Más de 40,código 2,Operativa,Jefa,3.0,0.0,0.0,código 1,0.0,1,0.0,Casada,0.0,0.0,6.0,1369.0
+DEMO-189,6395.35,0.0,código 91,código 2,86,12.0,código 1,40,1.0,0.0,32.0,Más de 40,código 0,Profesional,Otro familiar o no familiar,3.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,1024.0
+DEMO-190,6201.55,1.0,código 13,código 2,86,9.0,código 1,10,1.0,0.0,25.0,6 a 40,código 3,Operativa,Jefa,4.0,12.0,0.0,código 3,0.0,0,0.0,Unida,0.0,0.0,6.0,625.0
+DEMO-191,4134.37,0.0,código 34,código 2,86,15.0,código 1,36,1.0,0.0,19.0,Sin dato,código 0,Operativa,Cónyuge,2.0,0.0,0.0,código 2,0.0,2,0.0,Unida,0.0,0.0,4.0,361.0
+DEMO-192,13953.49,1.0,código 10,código 2,86,19.0,código 1,46,1.0,0.0,26.0,6 a 40,código 2,Profesional,Jefa,3.0,0.0,0.0,código 1,1.0,1,0.0,Separada o divorciada,0.0,0.0,6.0,676.0
+DEMO-193,9302.33,1.0,código 13,código 2,86,17.0,código 3,40,0.0,0.0,24.0,Hasta 5,código 0,Profesional,Jefa,4.0,0.0,0.0,código 1,0.0,2,1.0,Casada,0.0,0.0,5.0,576.0
+DEMO-194,5813.95,0.0,código 4,código 3,86,17.0,código 1,40,1.0,0.0,4.0,Más de 40,código 2,Profesional,Cónyuge,3.0,0.0,1.0,código 9,0.0,0,0.0,Unida,0.0,0.0,5.0,16.0
+DEMO-195,7295.94,0.0,código 32,código 3,87,15.0,código 3,40,0.0,0.0,32.0,Sin dato,código 2,Técnica,Jefa,1.0,25.0,0.0,código 9,0.0,0,0.0,Soltera,0.0,0.0,6.0,1024.0
+DEMO-196,19379.84,1.0,código 23,código 2,86,17.0,código 1,40,1.0,0.0,19.0,Más de 40,código 2,Profesional,Cónyuge,4.0,0.0,0.0,código 2,0.0,3,0.0,Casada,0.0,0.0,5.0,361.0
+DEMO-197,3322.26,0.0,código 15,código 3,86,17.0,código 1,40,1.0,0.0,15.0,6 a 40,código 2,Técnica,Hija,4.0,0.0,1.0,código 2,0.0,1,0.0,Separada o divorciada,0.0,0.0,5.0,225.0
+DEMO-198,2436.32,0.0,código 15,código 3,86,12.0,código 1,40,1.0,0.0,40.0,Sin dato,código 2,Técnica,Jefa,4.0,0.0,1.0,código 4,0.0,0,0.0,Casada,0.0,0.0,6.0,1600.0
+DEMO-199,5813.95,0.0,código 36,código 2,86,13.0,código 1,10,1.0,0.0,7.0,6 a 40,código 0,Operativa,Otro familiar o no familiar,3.0,0.0,0.0,código 9,0.0,0,0.0,Soltera,0.0,0.0,2.0,49.0
+DEMO-200,1937.98,0.0,código 30,código 3,87,11.0,código 2,40,0.0,0.0,6.0,Hasta 5,código 0,Técnica,Otro familiar o no familiar,2.0,0.0,0.0,código 4,0.0,0,0.0,Unida,1.0,0.0,4.0,36.0
+DEMO-201,10077.52,1.0,código 33,código 2,86,17.0,código 1,20,1.0,0.0,26.0,Más de 40,código 2,Técnica,Cónyuge,4.0,0.0,0.0,código 2,0.0,0,0.0,Casada,0.0,0.0,6.0,676.0
+DEMO-202,6976.74,0.0,código 10,código 2,88,15.0,código 1,10,1.0,0.0,21.0,6 a 40,código 0,Operativa,Jefa,3.0,0.0,0.0,código 1,1.0,0,0.0,Separada o divorciada,0.0,0.0,5.0,441.0
+DEMO-203,7571.66,0.0,código 34,código 2,86,17.0,código 1,40,1.0,0.0,10.0,Sin dato,código 2,Profesional,Cónyuge,3.0,0.0,0.0,código 1,0.0,0,0.0,Unida,0.0,0.0,6.0,100.0
+DEMO-204,5813.95,0.0,código 10,código 2,86,15.0,código 1,10,1.0,0.0,35.0,6 a 40,código 0,Operativa,Cónyuge,4.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,1225.0
+DEMO-205,1550.39,1.0,código 23,código 2,86,15.0,código 4,40,0.0,0.0,17.0,Hasta 5,código 0,Profesional,Cónyuge,4.0,0.0,0.0,código 2,0.0,0,0.0,Unida,0.0,0.0,5.0,289.0
+DEMO-206,5813.95,0.0,código 33,código 2,86,15.0,código 1,10,1.0,0.0,16.0,Más de 40,código 0,Operativa,Hija,3.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,3.0,256.0
+DEMO-207,8305.65,0.0,código 13,código 2,86,17.0,código 1,40,1.0,0.0,22.0,Más de 40,código 0,Operativa,Jefa,3.0,0.0,0.0,código 1,0.0,1,0.0,Soltera,0.0,0.0,6.0,484.0
+DEMO-208,5167.96,0.0,código 34,código 2,86,17.0,código 1,10,1.0,0.0,36.0,Más de 40,código 0,Operativa,Jefa,4.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,1296.0
+DEMO-209,9302.33,1.0,código 26,código 2,86,7.0,código 1,56,1.0,0.0,46.0,6 a 40,código 3,No calificada,Jefa,1.0,0.0,0.0,código 9,0.0,0,0.0,Unida,0.0,0.0,6.0,2116.0
+DEMO-210,4651.16,0.0,código 13,código 3,86,17.0,código 3,40,0.0,0.0,3.0,Hasta 5,código 0,Profesional,Hija,3.0,0.0,0.0,código 3,0.0,0,0.0,Soltera,0.0,0.0,5.0,9.0
+DEMO-211,6395.35,0.0,código 91,código 2,86,15.0,código 1,40,1.0,0.0,12.0,Más de 40,código 2,Técnica,Cónyuge,2.0,0.0,0.0,código 3,0.0,1,0.0,Unida,0.0,0.0,5.0,144.0
+DEMO-212,17275.75,0.0,código 32,código 2,86,19.0,código 1,40,1.0,0.0,10.0,6 a 40,código 0,Profesional,Jefa,2.0,6.0,1.0,código 1,0.0,0,1.0,Soltera,0.0,0.0,5.0,100.0
+DEMO-213,11627.91,1.0,código 2,código 2,86,17.0,código 1,40,1.0,0.0,28.0,Más de 40,código 0,Técnica,Cónyuge,3.0,0.0,0.0,código 4,0.0,1,0.0,Unida,1.0,0.0,6.0,784.0
+DEMO-214,4134.37,0.0,código 19,código 2,86,10.0,código 1,56,1.0,0.0,22.0,Más de 40,código 0,No calificada,Jefa,4.0,0.0,0.0,código 4,0.0,1,0.0,Unida,0.0,0.0,5.0,484.0
+DEMO-215,5191.03,0.0,código 26,código 3,86,12.0,código 1,53,1.0,0.0,21.0,Más de 40,código 2,No calificada,Jefa,3.0,0.0,1.0,código 1,0.0,2,0.0,Separada o divorciada,0.0,0.0,6.0,441.0
+DEMO-216,11627.91,0.0,código 6,código 3,86,17.0,código 1,40,1.0,0.0,11.0,Más de 40,código 0,Técnica,Jefa,3.0,0.0,0.0,código 4,1.0,1,0.0,Casada,1.0,0.0,6.0,121.0
+DEMO-217,3779.07,0.0,código 10,código 2,86,15.0,código 3,40,0.0,0.0,8.0,Más de 40,código 0,Técnica,Hija,2.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,5.0,64.0
+DEMO-218,3171.25,0.0,código 15,código 2,86,15.0,código 1,10,1.0,0.0,21.0,6 a 40,código 0,Operativa,Hija,3.0,0.0,0.0,código 4,0.0,2,0.0,Casada,0.0,0.0,5.0,441.0
+DEMO-219,4283.97,0.0,código 13,código 2,86,15.0,código 1,35,1.0,0.0,13.0,6 a 40,código 0,Operativa,Jefa,2.0,0.0,0.0,código 9,1.0,0,0.0,Soltera,0.0,0.0,5.0,169.0
+DEMO-220,7751.94,0.0,código 6,código 2,86,15.0,código 1,40,1.0,0.0,11.0,6 a 40,código 0,Técnica,Cónyuge,2.0,0.0,0.0,código 2,0.0,1,0.0,Unida,0.0,0.0,4.0,121.0
+DEMO-221,5813.95,0.0,código 19,código 3,86,15.0,código 1,40,1.0,0.0,32.0,Más de 40,código 0,Técnica,Jefa,1.0,0.0,0.0,código 2,0.0,0,0.0,Soltera,0.0,0.0,6.0,1024.0
+DEMO-222,6644.52,0.0,código 15,código 3,86,12.0,código 1,40,1.0,0.0,33.0,Sin dato,código 2,Profesional,Cónyuge,4.0,0.0,0.0,código 4,0.0,2,0.0,Casada,0.0,0.0,5.0,1089.0
+DEMO-223,9302.33,1.0,código 29,código 2,86,15.0,código 1,42,1.0,0.0,20.0,Más de 40,código 2,Operativa,Cónyuge,3.0,0.0,0.0,código 4,1.0,2,0.0,Casada,0.0,0.0,6.0,400.0
+DEMO-224,6976.74,1.0,código 23,código 2,86,15.0,código 1,40,1.0,0.0,38.0,Más de 40,código 2,Técnica,Cónyuge,5.0,0.0,0.0,código 2,0.0,0,0.0,Casada,0.0,0.0,6.0,1444.0
+DEMO-225,6201.55,1.0,código 33,código 2,86,12.0,código 1,10,1.0,0.0,20.0,6 a 40,código 0,Operativa,Jefa,3.0,0.0,0.0,código 4,1.0,2,0.0,Soltera,0.0,0.0,6.0,400.0
+DEMO-226,7267.44,0.0,código 17,código 3,86,17.0,código 1,40,1.0,0.0,12.0,Más de 40,código 0,Técnica,Hija,4.0,0.0,0.0,código 4,1.0,0,0.0,Soltera,0.0,0.0,5.0,144.0
+DEMO-227,4118.22,0.0,código 10,código 3,86,17.0,código 1,40,1.0,0.0,22.0,Más de 40,código 2,Técnica,Cónyuge,4.0,0.0,0.0,código 1,0.0,0,0.0,Casada,0.0,0.0,6.0,484.0
+DEMO-228,3654.49,0.0,código 8,código 2,86,15.0,código 4,40,0.0,1.0,26.0,Sin dato,código 2,Técnica,Hija,3.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,676.0
+DEMO-229,5813.95,0.0,código 30,código 2,86,12.0,código 1,10,1.0,0.0,17.0,6 a 40,código 0,Operativa,Cónyuge,3.0,0.0,0.0,código 2,1.0,2,0.0,Unida,1.0,0.0,5.0,289.0
+DEMO-230,8785.53,0.0,código 13,código 2,86,17.0,código 3,40,0.0,0.0,16.0,6 a 40,código 0,Técnica,Cónyuge,2.0,0.0,1.0,código 2,0.0,0,0.0,Casada,0.0,0.0,6.0,256.0
+DEMO-231,17441.86,0.0,código 33,código 2,86,17.0,código 1,42,1.0,0.0,24.0,Más de 40,código 0,Profesional,Jefa,4.0,5.0,0.0,código 4,0.0,1,0.0,Unida,0.0,0.0,5.0,576.0
+DEMO-232,7751.94,0.0,código 38,código 2,86,17.0,código 1,40,1.0,0.0,37.0,6 a 40,código 3,Técnica,Jefa,1.0,0.0,0.0,código 2,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1369.0
+DEMO-233,4651.16,1.0,código 32,código 2,86,17.0,código 3,40,0.0,0.0,12.0,Hasta 5,código 0,Operativa,Cónyuge,4.0,0.0,0.0,código 3,1.0,1,0.0,Unida,1.0,0.0,6.0,144.0
+DEMO-234,11627.91,1.0,código 29,código 3,86,17.0,código 1,40,1.0,0.0,24.0,Más de 40,código 2,Profesional,Jefa,2.0,20.0,0.0,código 2,1.0,0,0.0,Soltera,0.0,0.0,6.0,576.0
+DEMO-235,12919.9,1.0,código 5,código 2,86,15.0,código 1,40,1.0,0.0,7.0,Sin dato,código 0,Técnica,Otro familiar o no familiar,2.0,0.0,0.0,código 9,0.0,0,0.0,Soltera,0.0,0.0,2.0,49.0
+DEMO-236,5426.36,1.0,código 29,código 2,86,17.0,código 3,40,0.0,0.0,10.0,6 a 40,código 0,Profesional,Jefa,4.0,6.0,0.0,código 4,0.0,1,0.0,Unida,0.0,0.0,4.0,100.0
+DEMO-237,12093.02,1.0,código 6,código 1,86,17.0,código 1,45,1.0,0.0,12.0,Más de 40,código 2,Profesional,Cónyuge,2.0,0.0,0.0,código 2,0.0,0,0.0,Unida,0.0,0.0,5.0,144.0
+DEMO-238,5813.95,1.0,código 33,código 2,86,15.0,código 1,40,1.0,0.0,11.0,Más de 40,código 3,Técnica,Jefa,2.0,0.0,0.0,código 1,0.0,2,0.0,Separada o divorciada,0.0,0.0,5.0,121.0
+DEMO-239,5167.96,1.0,código 13,código 2,88,11.0,código 2,53,0.0,1.0,21.0,Más de 40,código 0,No calificada,Hija,2.0,0.0,0.0,código 3,1.0,0,0.0,Soltera,0.0,0.0,5.0,441.0
+DEMO-240,11295.68,0.0,código 13,código 2,86,17.0,código 1,40,1.0,0.0,21.0,Más de 40,código 2,Técnica,Jefa,4.0,6.0,0.0,código 1,0.0,1,0.0,Unida,0.0,0.0,5.0,441.0
+DEMO-241,10077.52,1.0,código 3,código 2,86,16.0,código 1,40,1.0,0.0,23.0,6 a 40,código 3,Técnica,Jefa,2.0,0.0,0.0,código 1,0.0,0,0.0,Soltera,0.0,0.0,6.0,529.0
+DEMO-242,7751.94,0.0,código 13,código 3,86,17.0,código 3,40,0.0,0.0,4.0,Sin dato,código 2,Profesional,Otro familiar o no familiar,1.0,0.0,0.0,código 9,0.0,0,0.0,Soltera,0.0,0.0,4.0,16.0
+DEMO-243,7475.08,0.0,código 31,código 3,86,17.0,código 1,40,1.0,0.0,34.0,Más de 40,código 2,Técnica,Jefa,3.0,0.0,0.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1156.0
+DEMO-244,7308.97,0.0,código 32,código 2,86,12.0,código 1,42,1.0,0.0,32.0,Más de 40,código 3,Operativa,Cónyuge,3.0,0.0,0.0,código 4,0.0,1,0.0,Unida,0.0,0.0,6.0,1024.0
+DEMO-245,5813.95,0.0,código 13,código 2,86,15.0,código 1,40,1.0,0.0,32.0,Más de 40,código 0,Técnica,Jefa,2.0,0.0,1.0,código 2,1.0,0,0.0,Separada o divorciada,1.0,0.0,6.0,1024.0
+DEMO-246,6976.74,1.0,código 13,código 1,86,15.0,código 1,10,1.0,0.0,4.0,6 a 40,código 0,Operativa,Cónyuge,3.0,0.0,0.0,código 1,0.0,0,0.0,Unida,0.0,0.0,5.0,16.0
+DEMO-247,15503.88,1.0,código 27,código 2,86,15.0,código 1,40,1.0,0.0,10.0,Más de 40,código 2,Técnica,Cónyuge,3.0,0.0,0.0,código 1,0.0,3,0.0,Unida,0.0,0.0,5.0,100.0
+DEMO-248,5116.28,0.0,código 15,código 2,86,15.0,código 1,20,1.0,0.0,33.0,6 a 40,código 2,Operativa,Jefa,2.0,0.0,0.0,código 4,0.0,0,0.0,Soltera,0.0,0.0,6.0,1089.0
+DEMO-249,4651.16,0.0,código 33,código 2,86,12.0,código 1,10,1.0,0.0,15.0,Más de 40,código 0,Operativa,Hija,2.0,0.0,0.0,código 1,1.0,0,0.0,Separada o divorciada,0.0,0.0,5.0,225.0
+DEMO-250,3137.69,0.0,código 15,código 3,87,10.0,código 1,46,1.0,0.0,35.0,6 a 40,código 2,Operativa,Jefa,4.0,0.0,0.0,código 4,0.0,0,0.0,Separada o divorciada,0.0,0.0,6.0,1225.0
