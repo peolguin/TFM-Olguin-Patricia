@@ -5,6 +5,7 @@ TFM - Máster en Data Science, Big Data & Business Analytics (UCM) - Patricia Ol
 Uso:  streamlit run app/app.py      (desde la carpeta raíz del repositorio)
 El modelo y las tablas se generan con el notebook del TFM y se guardan en la carpeta modelos/.
 """
+import io
 from pathlib import Path
 
 import joblib
@@ -39,16 +40,86 @@ VARIABLES = pk["variables"]
 MEDIANA = pk["mediana_salario_hora"]
 
 
+# Nombres de las categorías según el diseño de registro de la EPH, el CAES-Mercosur 1.0 y el CNO-2001 (INDEC)
+CAES = {"01": "Agricultura, ganadería y caza", "10": "Elaboración de alimentos", "13": "Fabricación de textiles",
+        "14": "Confección de prendas de vestir", "40": "Construcción", "45": "Comercio y reparación de vehículos",
+        "48": "Comercio (excepto vehículos)", "49": "Transporte terrestre", "52": "Almacenamiento y servicios al transporte",
+        "53": "Correo y mensajería", "55": "Alojamiento (hoteles y otros)", "56": "Servicios de comidas y bebidas",
+        "61": "Telecomunicaciones", "62": "Programación y consultoría informática", "64": "Servicios financieros",
+        "65": "Seguros y fondos de pensiones", "68": "Actividades inmobiliarias", "69": "Actividades jurídicas y contables",
+        "72": "Investigación y desarrollo", "74": "Otras actividades profesionales y técnicas",
+        "79": "Agencias de viajes y turismo", "80": "Investigación y seguridad", "81": "Limpieza y mantenimiento de edificios",
+        "82": "Servicios administrativos a empresas", "84": "Administración pública y defensa", "85": "Enseñanza",
+        "86": "Atención de la salud", "87": "Residencias con atención de la salud", "88": "Servicios sociales sin alojamiento",
+        "92": "Juegos de azar y apuestas", "93": "Deporte y entretenimiento", "94": "Asociaciones",
+        "96": "Otros servicios personales", "97": "Hogares que emplean personal doméstico",
+        "99": "Organismos extraterritoriales o actividad no especificada"}
+CNO = {"03": "Directivas de organismos y empresas estatales", "06": "Directivas de medianas empresas privadas",
+       "10": "Gestión administrativa, planificación y control", "11": "Gestión jurídico-legal",
+       "20": "Gestión presupuestaria, contable y financiera", "30": "Comercialización directa",
+       "31": "Corretaje, venta domiciliaria y promoción", "32": "Comercialización indirecta (repositoras, cadetas)",
+       "34": "Transporte", "35": "Telecomunicaciones", "36": "Almacenaje", "40": "Salud y sanidad", "41": "Educación",
+       "42": "Investigación científica y tecnológica", "44": "Prevención de siniestros y medio ambiente",
+       "45": "Comunicación de masas", "46": "Servicios sociales, comunales, políticos y religiosos",
+       "47": "Vigilancia y seguridad civil", "48": "Servicios policiales", "51": "Deporte", "53": "Servicios gastronómicos",
+       "55": "Servicio doméstico", "56": "Limpieza (no doméstica)", "57": "Cuidado y atención de personas",
+       "58": "Otros servicios sociales", "72": "Construcción e infraestructura", "80": "Producción industrial y artesanal",
+       "81": "Producción de software"}
+ETIQUETAS = {
+    "caes_division": CAES, "cno_caracter": CNO,
+    "INTENSI": {"código 1": "Subocupada (trabaja menos horas de las que quiere)", "código 2": "Ocupada plena",
+                "código 3": "Sobreocupada (más de 45 horas)"},
+    "PP07K": {"código 1": "Recibo con sello, membrete o firma del empleador", "código 2": "Papel o recibo sin membrete",
+              "código 3": "Entrega una factura", "código 4": "No le dan ni entrega nada"},
+    "PP04A1": {"código 0": "No corresponde (empresa privada)", "código 1": "Estado nacional", "código 2": "Estado provincial",
+               "código 3": "Estado municipal"},
+    "IV4": {"código 1": "Membrana o cubierta asfáltica", "código 2": "Baldosa o losa sin cubierta", "código 3": "Pizarra o teja",
+            "código 4": "Chapa de metal sin cubierta", "código 5": "Chapa de fibrocemento o plástico",
+            "código 7": "Caña, tabla o paja", "código 9": "Departamento en propiedad horizontal"},
+    "AGLOMERADO": pk.get("nombres_aglomerado", {}),
+}
+GENERICAS = {"Otros": "Otra categoría", "Sin dato": "Sin dato"}
+
+
+def etiqueta(v, codigo):
+    """Nombre legible de una categoría (el código se conserva internamente para el modelo)."""
+    return ETIQUETAS.get(v, {}).get(str(codigo), GENERICAS.get(str(codigo), str(codigo)))
+
+
+def valor_legible(v, valor):
+    """Valor típico en el formato de la plantilla: nombres para las categorías y Sí/No para las binarias."""
+    if pk["tipos"][v] == "categórica":
+        return etiqueta(v, valor)
+    if pk["tipos"][v] == "binaria":
+        return "Sí" if round(valor) == 1 else "No"
+    return round(float(valor), 1)
+
+
+def a_codigo(v, valor):
+    """Acepta el nombre legible o el código original y devuelve el código que usa el modelo."""
+    inverso = {n.lower(): c for c, n in ETIQUETAS.get(v, {}).items()}
+    inverso.update({n.lower(): c for c, n in GENERICAS.items()})
+    texto = str(valor).strip()
+    if texto.endswith(".0"):
+        texto = texto[:-2]
+    if v in ("caes_division", "cno_caracter") and texto.isdigit():
+        texto = texto.zfill(2)
+    return inverso.get(texto.lower(), texto)
+
+
 def preparar(datos):
     """Ordena las columnas, aplica las categorías del entrenamiento y completa lo que falte con valores típicos."""
     X = pd.DataFrame(datos).copy()
+    X = X.rename(columns={d: v for v, d in pk["descripciones"].items()})     # acepta los encabezados legibles
+    if "exp_pot2" in VARIABLES and "exp_pot2" not in X and "exp_pot" in X:
+        X["exp_pot2"] = pd.to_numeric(X["exp_pot"], errors="coerce") ** 2
     for v in VARIABLES:
         if v not in X:
             X[v] = pk["valores_tipicos"][v]
         if pk["tipos"][v] == "categórica":
-            X[v] = pd.Categorical(X[v].astype(str), categories=pk["categorias"][v])
+            X[v] = pd.Categorical(X[v].map(lambda x, v=v: a_codigo(v, x)), categories=pk["categorias"][v])
         else:
-            X[v] = pd.to_numeric(X[v], errors="coerce")
+            X[v] = pd.to_numeric(X[v].replace({"Sí": 1, "Si": 1, "sí": 1, "si": 1, "No": 0, "no": 0}), errors="coerce")
     return X[VARIABLES]
 
 
@@ -59,6 +130,11 @@ def predecir(X):
     sup = pk["cuantil_sup"].predict(X) + pk["ajuste_banda"]
     centro = np.clip(centro, inf, sup)
     return MEDIANA * np.exp(centro), MEDIANA * np.exp(inf), MEDIANA * np.exp(sup)
+
+
+def coma(valor, decimales=1):
+    """Número con coma decimal, como se escribe en español."""
+    return f"{valor:.{decimales}f}".replace(".", ",")
 
 
 def pesos(valor):
@@ -89,17 +165,16 @@ with tabs[0]:
     for i, bloque in enumerate(sorted(set(pk["bloques"].values()))):
         with columnas[i % 2].expander(bloque, expanded=i < 2):
             for v in [x for x in VARIABLES if pk["bloques"][x] == bloque and not x.endswith("_faltante") and x != "exp_pot2"]:
-                etiqueta, tipo, tipico = pk["descripciones"][v], pk["tipos"][v], pk["valores_tipicos"][v]
+                texto, tipo, tipico = pk["descripciones"][v], pk["tipos"][v], pk["valores_tipicos"][v]
                 if tipo == "categórica":
                     opciones = pk["categorias"][v]
-                    nombres = pk.get("nombres_aglomerado", {}) if v == "AGLOMERADO" else {}
-                    valores[v] = st.selectbox(etiqueta, opciones, index=opciones.index(tipico) if tipico in opciones else 0,
-                                              format_func=lambda o, n=nombres: n.get(o, o))
+                    valores[v] = st.selectbox(texto, opciones, index=opciones.index(tipico) if tipico in opciones else 0,
+                                              format_func=lambda o, v=v: etiqueta(v, o))
                 elif tipo == "binaria":
-                    valores[v] = float(st.checkbox(etiqueta, value=bool(round(tipico))))
+                    valores[v] = float(st.checkbox(texto, value=bool(round(tipico))))
                 else:
                     lo, hi = pk["rangos"][v]
-                    valores[v] = st.slider(etiqueta, float(lo), float(hi), float(np.clip(tipico, lo, hi)))
+                    valores[v] = st.slider(texto, float(lo), float(hi), float(np.clip(tipico, lo, hi)))
     if "exp_pot2" in VARIABLES:
         valores["exp_pot2"] = valores.get("exp_pot", pk["valores_tipicos"].get("exp_pot", 0)) ** 2
     X = preparar([valores])
@@ -108,15 +183,15 @@ with tabs[0]:
 
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Salario horario esperado", pesos(centro[0]))
-    c2.metric("Banda (mínimo – máximo)", f"{pesos(inf[0])} – {pesos(sup[0])}")
+    c2.metric("Banda del 90% (en pesos)", f"{pesos(inf[0])[2:]} a {pesos(sup[0])[2:]}")
     c3.metric("Salario mensual a jornada completa", pesos(mensual))
     region = pk["aglomerado_region"].get(str(valores.get("AGLOMERADO")))
     cbt = pk["cbt_region"].get(region)
     if cbt:
         wr = mensual / (cbt * pk["adultos_equivalentes"])
-        c4.metric("Welfare ratio", f"{wr:.2f}")
+        c4.metric("Welfare ratio", coma(wr, 2))
         st.info(f"**¿Alcanza para vivir?** Con este salario a jornada completa, una trabajadora de la región **{region}** "
-                f"cubriría **{wr:.2f} veces** la canasta básica total de una familia tipo (pareja con dos hijos). "
+                f"cubriría **{coma(wr, 2)} veces** la canasta básica total de una familia tipo (pareja con dos hijos). "
                 + ("No alcanza para que esa familia supere la línea de pobreza." if wr < 1 else
                    "Alcanza para que esa familia supere la línea de pobreza."))
     contrib = pk["modelo"].predict(X, pred_contrib=True)[0][:-1]
@@ -129,21 +204,42 @@ with tabs[0]:
     fig.update_layout(showlegend=False, height=480, yaxis_title="")
     st.plotly_chart(fig, width="stretch")
 
+def a_csv(df):
+    """CSV para Excel en español: separador ';', coma decimal y UTF-8 con BOM (conserva tildes y eñes)."""
+    return df.to_csv(index=False, sep=";", decimal=",").encode("utf-8-sig")
+
+
+def leer_csv(archivo):
+    """Lee el CSV subido con cualquier separador (',' o ';') y codificación (UTF-8 o la de Excel en Windows)."""
+    datos = archivo.getvalue()
+    for codificacion in ("utf-8-sig", "cp1252"):
+        try:
+            texto = datos.decode(codificacion)
+            break
+        except UnicodeDecodeError:
+            continue
+    primera = texto.splitlines()[0] if texto else ""
+    sep = ";" if primera.count(";") > primera.count(",") else ","
+    return pd.read_csv(io.StringIO(texto), sep=sep, decimal="," if sep == ";" else ".")
+
+
 # ------------------------------------------------------------------------------------------------------------------
 with tabs[1]:
     st.subheader("Auditoría de nómina: ¿pagamos según el mercado? ¿Hay brecha de género a igual perfil?")
-    st.markdown("Suba un CSV **anonimizado** con una fila por persona: `id_persona`, `sexo` (Mujer / Varón), "
-                "`salario_horario` (en pesos) y las columnas del perfil. Las columnas que falten se completan con valores "
-                "típicos. La referencia de mercado se calcula con el modelo de las mujeres asalariadas.")
+    st.markdown("Suba un CSV **anonimizado** con una fila por persona: **id_persona**, **sexo** (Mujer o Varón), "
+                "**salario_horario** (en pesos) y las columnas del perfil, con los mismos nombres que la plantilla. "
+                "Las columnas que falten se completan con valores típicos. La referencia de mercado se calcula con el "
+                "modelo de las mujeres asalariadas.")
     plantilla = pd.DataFrame([{"id_persona": "E001", "sexo": "Mujer", "salario_horario": round(MEDIANA, 2),
-                               **{v: pk["valores_tipicos"][v] for v in VARIABLES}}])
-    st.download_button("Descargar plantilla", plantilla.to_csv(index=False).encode(), "plantilla_nomina.csv")
+                               **{pk["descripciones"][v]: valor_legible(v, pk["valores_tipicos"][v])
+                                  for v in VARIABLES if v != "exp_pot2" and not v.endswith("_faltante")}}])
+    st.download_button("Descargar plantilla", a_csv(plantilla), "plantilla_nomina.csv", mime="text/csv")
     archivo = st.file_uploader("Nómina (CSV)", type="csv")
     ruta_demo = CARPETA / "nomina_demo_AR.csv"
     usar_demo = ruta_demo.exists() and st.checkbox(
         "Usar la nómina de demostración (simulada con registros de la EPH del 1T2026 del sector salud; no corresponde a "
         "ninguna empresa)")
-    nomina = pd.read_csv(archivo) if archivo is not None else (pd.read_csv(ruta_demo) if usar_demo else None)
+    nomina = leer_csv(archivo) if archivo is not None else (pd.read_csv(ruta_demo) if usar_demo else None)
     if nomina is not None:
         if "id_persona" not in nomina and "id_empleada" in nomina:
             nomina = nomina.rename(columns={"id_empleada": "id_persona"})
@@ -165,8 +261,8 @@ with tabs[1]:
                                / res.loc[res.sexo == "Mujer", "salario_horario"].mean() - 1)
             igual_perfil = 100 * (np.exp(ratio[res.sexo == "Varón"].mean() - ratio[res.sexo == "Mujer"].mean()) - 1)
             g1, g2 = st.columns(2)
-            g1.metric("Brecha de género observada (salario por hora)", f"{observada:.1f}%")
-            g2.metric("Brecha de género a igual perfil", f"{igual_perfil:.1f}%")
+            g1.metric("Brecha de género observada (salario por hora)", f"{coma(observada)}%")
+            g2.metric("Brecha de género a igual perfil", f"{coma(igual_perfil)}%")
             if igual_perfil >= 5:
                 st.warning("La brecha a igual perfil supera el **5%**: con la Directiva (UE) 2023/970 de transparencia "
                            "retributiva, una empresa europea debería justificarla o hacer una evaluación conjunta con los "
@@ -178,7 +274,7 @@ with tabs[1]:
                                                          "Por encima del mercado": "#e9c46a"},
                                      title="Diferencia de cada salario con la referencia de mercado"), width="stretch")
         st.dataframe(res.round(1), width="stretch", hide_index=True)
-        st.download_button("Descargar resultados", res.to_csv(index=False).encode(), "auditoria_resultados.csv")
+        st.download_button("Descargar resultados", a_csv(res), "auditoria_resultados.csv", mime="text/csv")
     brechas = tabla("brecha_grupos.csv")
     if brechas is not None:
         with st.expander("Referencia nacional: brecha de género no explicada por grupo de trabajadores (EPH)"):
