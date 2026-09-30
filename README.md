@@ -1,4 +1,4 @@
-# Determinantes y predicción del salario de las mujeres asalariadas en Argentina (2024-2026)
+# Determinantes y predicción del salario de las mujeres ocupadas en Argentina (2024-2026)
 
 ### Una comparación con Brasil y España y una herramienta de referencia salarial
 
