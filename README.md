@@ -1,4 +1,6 @@
-# ¿Cuánto *debería* cobrar? Determinantes del salario de las mujeres asalariadas en Argentina, en perspectiva comparada con Brasil y España (2024-2026)
+# Determinantes y predicción del salario de las mujeres asalariadas en Argentina (2024-2026)
+
+### Una herramienta de referencia salarial validada en el tiempo y comparada con Brasil y España
 
 **Trabajo Fin de Máster** · Máster en Data Science, Big Data & Business Analytics · Universidad Complutense de Madrid
 **Autora:** Patricia Olguín · 2026
