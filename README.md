@@ -27,7 +27,7 @@ un organismo público (para monitorear el mercado de trabajo femenino). En la **
 mismas variables en Brasil y España, para distinguir lo que es propio del mercado argentino de lo que es general.
 
 * **Datos:**
-  * EPH, bases de personas y hogares, 1T2024–1T2026;
+  * EPH, bases de personas y hogares, 1T2024 a 1T2026;
   * Canasta Básica Total regional (INDEC) e IPC (INDEC);
   * PPA del Banco Mundial;
   * para la comparación, la PNAD Contínua (IBGE, Brasil) y la Encuesta de Condiciones de Vida (INE, España).
@@ -35,7 +35,7 @@ mismas variables en Brasil y España, para distinguir lo que es propio del merca
   la volatilidad macroeconómica sin necesidad de deflactar.
 * **Modelos:** regresión lineal (ecuación de Mincer), Ridge, Lasso, árbol de decisión, Random Forest y LightGBM.
   Los experimentos se registran en MLflow.
-* **Validación fuera de tiempo:** entrenamiento 1T2024–2T2025, validación 3T–4T2025, prueba 1T2026.
+* **Validación fuera de tiempo:** entrenamiento 1T2024 a 2T2025, validación 3T a 4T2025, prueba 1T2026.
 * **Interpretación:**
   * valores SHAP;
   * canales del hogar y corrección de Heckman;
@@ -49,36 +49,36 @@ mismas variables en Brasil y España, para distinguir lo que es propio del merca
 
 | Carpeta / archivo | Contenido |
 |---|---|
-| `notebook/TFM_salarios_mujeres_Argentina.ipynb` | El trabajo completo en un solo notebook: **parte I**, Argentina (secciones 1-10); **parte II**, comparación con Brasil y España (sección 11); conclusiones generales (sección 12). Unos 15 minutos de ejecución, más 15 la primera vez para preparar las bases de Brasil y España |
-| `funciones_tfm.py` | Funciones auxiliares que importa el notebook (organizadas como `NuestrasFunciones.py` del módulo de Minería de datos) |
-| `app/app.py` | Aplicación Streamlit |
-| `modelos/` | Modelo entrenado y tablas de resultados que usa la aplicación (los genera el notebook) |
-| `requirements.txt` | Librerías de la aplicación, con las versiones con que se entrenó el modelo |
-| `resumen/` | Memoria del trabajo (20 páginas + anexo) |
-| `video/` | Presentación de 5 minutos |
-| `readme/` | Copia de este documento |
+| notebook/TFM\_salarios\_mujeres\_Argentina.ipynb | El trabajo completo en un solo notebook: **parte I**, Argentina (secciones 1-10); **parte II**, comparación con Brasil y España (sección 11); conclusiones generales (sección 12). Unos 15 minutos de ejecución, más 15 la primera vez para preparar las bases de Brasil y España |
+| funciones\_tfm.py | Funciones auxiliares que importa el notebook (organizadas como NuestrasFunciones.py del módulo de Minería de datos) |
+| app/app.py | Aplicación Streamlit |
+| modelos/ | Modelo entrenado y tablas de resultados que usa la aplicación (los genera el notebook) |
+| requirements.txt | Librerías de la aplicación, con las versiones con que se entrenó el modelo |
+| resumen/ | Memoria del trabajo (20 páginas + anexo) |
+| video/ | Presentación de 5 minutos |
+| readme/ | Copia de este documento |
 
 ## Cómo reproducir el trabajo en Google Colab
 
 1. **Datos.**
-   * Los microdatos no se suben a GitHub: están en la carpeta de Google Drive `TFM`, compartida con los tutores.
-   * Abra el enlace de la carpeta y elija **Organizar → Agregar acceso directo → Mi unidad**. El notebook la encuentra
-     en `MyDrive/TFM`.
+   * Los microdatos no se suben a GitHub: están en la carpeta de Google Drive TFM, compartida con los tutores.
+   * Abra el enlace de la carpeta y elija **Organizar**, **Agregar acceso directo** y **Mi unidad**. El notebook la encuentra
+     en MyDrive/TFM.
 2. **Notebook.** Abra el [notebook en Colab](https://colab.research.google.com/github/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.ipynb)
-   y elija **Entorno de ejecución → Ejecutar todas**.
+   y elija el menú **Entorno de ejecución**, opción **Ejecutar todas**.
    * Pedirá permiso para acceder a Drive.
    * No hace falta ninguna clave de GitHub: solo la autora sube los resultados al repositorio.
 
 | Carpeta de Drive | Archivos | Fuente |
 |---|---|---|
-| `TFM/datos_originales/` | `eph_{año}_trim{trimestre}_{pers\|hog}.csv` (18) | INDEC, EPH continua, bases de usuarios |
-| `TFM/datos_originales/` | `canasta_basica_regional.csv` | INDEC, informes semestrales de pobreza (CBT por región y mes) |
-| `TFM/datos_originales/` | `ipc_indec.csv` | INDEC, IPC nivel general nacional |
-| `TFM/datos_originales/` | `ppa_banco_mundial.csv` | Banco Mundial, PA.NUS.PRVT.PP |
-| `TFM/datos_comparacion/pnadc/` | `PNADC_{trimestre}{año}.zip` (1T2024-2T2026) y `Dicionario_e_input.zip` | IBGE, PNAD Contínua trimestral |
-| `TFM/datos_comparacion/ecv/`, `ees/` | `datos_2024.zip`, `datos_2025.zip`; `datos_2022.zip` | INE, Encuesta de Condiciones de Vida y Encuesta de Estructura Salarial |
+| TFM/datos\_originales/ | eph\_{año}\_trim{trimestre}\_{pers\|hog}.csv (18) | INDEC, EPH continua, bases de usuarios |
+| TFM/datos\_originales/ | canasta\_basica\_regional.csv | INDEC, informes semestrales de pobreza (CBT por región y mes) |
+| TFM/datos\_originales/ | ipc\_indec.csv | INDEC, IPC nivel general nacional |
+| TFM/datos\_originales/ | ppa\_banco\_mundial.csv | Banco Mundial, PA.NUS.PRVT.PP |
+| TFM/datos\_comparacion/pnadc/ | PNADC\_{trimestre}{año}.zip (1T2024-2T2026) y Dicionario\_e\_input.zip | IBGE, PNAD Contínua trimestral |
+| TFM/datos\_comparacion/ecv/, ees/ | datos\_2024.zip, datos\_2025.zip; datos\_2022.zip | INE, Encuesta de Condiciones de Vida y Encuesta de Estructura Salarial |
 
-La primera ejecución de la parte II reduce los microdatos de Brasil y España a una base común (`TFM/datos_procesados/base_comun_BR_ES.parquet`); las siguientes la leen en segundos.
+La primera ejecución de la parte II reduce los microdatos de Brasil y España a una base común (TFM/datos\_procesados/base\_comun\_BR\_ES.parquet); las siguientes la leen en segundos.
 
 ## La aplicación
 
@@ -105,8 +105,8 @@ streamlit run app/app.py
 
 | Indicador | Resultado |
 |---|---|
-| Variables | 319 variables de personas y hogares (incluidas 5 construidas con todo el hogar) → 97 candidatas → **26 seleccionadas** |
-| Predicción a un año (1T2026) | LightGBM R² = 0,44 · regresión lineal 0,40 · origen móvil 0,44–0,55 |
+| Variables | 319 variables de personas y hogares (incluidas 5 construidas con todo el hogar), 97 candidatas y **26 seleccionadas** |
+| Predicción a un año (1T2026) | LightGBM R² = 0,44 · regresión lineal 0,40 · origen móvil entre 0,44 y 0,55 |
 | Principales determinantes (SHAP) | aglomerado, empleo registrado, jornada, educación, comprobante de pago, actividad y ocupación |
 | Reparto de la importancia | 63% empresa y política laboral · 14% persona · 23% factores estructurales |
 | Hijos y cuidados | no cambian el salario *por hora*; cada hijo de 0 a 5 años reduce 6 puntos la probabilidad de estar ocupada |
@@ -114,7 +114,7 @@ streamlit run app/app.py
 | Polos de recursos naturales | hidrocarburos: +26% a igual perfil y +5,5% en términos reales · minería: −12% y 0% real |
 | *Welfare ratio* (Allen) | el salario mediano de una asalariada a jornada completa cubre 0,75 canastas básicas de una familia tipo (1T2026); 0,51 en el 1T2024 |
 | Brecha de género | observada 4,8% · no explicada 6,4% (umbral de la Directiva europea: 5%) · 13-15% en comercio, industria y servicios profesionales |
-| Estabilidad | composición estable (PSI < 0,05); la prima del empleo registrado cayó del 34% al 19% entre 2024 y 2025 → reentrenar cada trimestre |
+| Estabilidad | composición estable (PSI < 0,05); la prima del empleo registrado cayó del 34% al 19% entre 2024 y 2025, por lo que conviene reentrenar cada trimestre |
 | Bandas del 90% | cobertura real en el 1T2026: 85% |
 
 ### Parte II: Argentina, Brasil y España (mujeres asalariadas)
@@ -142,3 +142,11 @@ Los salarios son declarados en una encuesta y los efectos son asociaciones, no e
 * Romano, Y., Patterson, E. y Candès, E. (2019). Conformalized Quantile Regression. *NeurIPS*.
 * Lundberg, S. y Lee, S.-I. (2017). A Unified Approach to Interpreting Model Predictions. *NeurIPS*.
 * Directiva (UE) 2023/970 sobre transparencia retributiva.
+
+### Trabajos previos de la autora sobre salarios reales y bienestar
+
+* Olguín, P. y Bragoni, B. (2020). Salarios reales y subsistencia de los trabajadores de Mendoza durante la gran expansión (Argentina, 1890-1914). *Revista de Historia Económica - Journal of Iberian and Latin American Economic History*, 1-28. [doi:10.1017/S0212610920000051](https://doi.org/10.1017/S0212610920000051).
+* Olguín, P. y Bragoni, B. (2023). Salarios de mujeres e ingreso familiar de subsistencia en Mendoza (Argentina) a principios del siglo XX. *Investigaciones de Historia Económica*, Asociación Española de Historia Económica. [doi:10.33231/j.ihe.2023.04.001](https://doi.org/10.33231/j.ihe.2023.04.001).
+* Olguín, P. y Bragoni, B. (2025). Convivir para subsistir: salarios reales de varones y mujeres en Mendoza (primera mitad del siglo XX). En D. Santilli (comp.), *La Argentina entre tres siglos. Precios, salarios y desigualdad en la larga duración (1776-1945)*. Buenos Aires: Prometeo.
+* Olguín, P. (2025). Entre el bienestar y la subsistencia. Salarios de varones y mujeres en Mendoza en el siglo XX. XXIX Jornadas de Historia Económica, AAHE y Universidad Nacional de Jujuy, San Salvador de Jujuy, septiembre de 2025.
+* Olguín, P., Mahnic, P., Norton, A. y Gómez, F. (2026). Lo que muestran y lo que ocultan las estadísticas. Desempeño económico y desigualdad en Mendoza en el largo plazo, 1895-2023. XXIX Jornadas de Investigación, SIIP, Universidad Nacional de Cuyo, Mendoza, abril de 2026.
