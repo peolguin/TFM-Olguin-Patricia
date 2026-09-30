@@ -3,7 +3,7 @@
 **Trabajo Fin de Máster** · Máster en Data Science, Big Data & Business Analytics · Universidad Complutense de Madrid
 **Autora:** Patricia Olguín · 2026
 
-**Aplicación en línea:** *(pegar aquí la dirección .streamlit.app)*
+**Aplicación en línea:** [tfm-olguin-patricia.streamlit.app](https://tfm-olguin-patricia.streamlit.app/)
 **Notebook en Colab:** [abrir](https://colab.research.google.com/github/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.ipynb)
 
 ## De qué trata
@@ -80,7 +80,7 @@ La primera ejecución de la parte II reduce los microdatos de Brasil y España a
 
 ## La aplicación
 
-La aplicación está publicada en Streamlit Community Cloud (enlace al comienzo de este documento). Tiene cinco pestañas:
+La aplicación está publicada en Streamlit Community Cloud: [tfm-olguin-patricia.streamlit.app](https://tfm-olguin-patricia.streamlit.app/). Tiene cinco pestañas:
 
 | Pestaña | Pregunta que responde |
 |---|---|
