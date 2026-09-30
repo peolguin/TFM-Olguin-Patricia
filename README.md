@@ -93,16 +93,35 @@ pip install -r requirements.txt
 streamlit run app/app.py
 ```
 
-## Resultados principales (Argentina)
+## Resultados principales
+
+### Parte I: Argentina
 
 | Indicador | Resultado |
 |---|---|
-| Variables | 332 columnas originales + 5 construidas con todo el hogar → 97 candidatas → **26 seleccionadas** |
+| Variables | 319 variables de personas y hogares (incluidas 5 construidas con todo el hogar) → 97 candidatas → **26 seleccionadas** |
 | Predicción a un año (1T2026) | LightGBM R² = 0,44 · regresión lineal 0,40 · origen móvil 0,44–0,55 |
 | Principales determinantes (SHAP) | aglomerado, empleo registrado, jornada, educación, comprobante de pago, actividad y ocupación |
 | Reparto de la importancia | 63% empresa y política laboral · 14% persona · 23% factores estructurales |
-| Hijos y cuidados | no cambian el salario *por hora*; cada hijo de 0 a 5 años reduce unos 6 puntos la probabilidad de estar ocupada |
+| Hijos y cuidados | no cambian el salario *por hora*; cada hijo de 0 a 5 años reduce 6 puntos la probabilidad de estar ocupada |
+| Territorio y costo de vida | a igual perfil, 39 puntos de diferencia entre regiones en pesos y 9 puntos descontando la canasta regional |
+| Polos de recursos naturales | hidrocarburos: +26% a igual perfil y +5,5% en términos reales · minería: −12% y 0% real |
+| *Welfare ratio* (Allen) | el salario mediano de una asalariada a jornada completa cubre 0,75 canastas básicas de una familia tipo (1T2026); 0,51 en el 1T2024 |
+| Brecha de género | observada 4,8% · no explicada 6,4% (umbral de la Directiva europea: 5%) · 13-15% en comercio, industria y servicios profesionales |
 | Estabilidad | composición estable (PSI < 0,05); la prima del empleo registrado cayó del 34% al 19% entre 2024 y 2025 → reentrenar cada trimestre |
+| Bandas del 90% | cobertura real en el 1T2026: 85% |
+
+### Parte II: Argentina, Brasil y España (mujeres asalariadas)
+
+| Indicador | Argentina | Brasil | España |
+|---|---|---|---|
+| Año adicional de educación | +5,1% | +5,8% | +3,9% |
+| Ocupación calificada (vs. media) | +21% | +65% | +34% |
+| Empleo registrado / contrato escrito | +44% | +34% | +16% |
+| Jornada parcial (por hora) | +27% | +29% | +8% |
+| Bloque con más peso (SHAP) | condiciones de trabajo (44%) | capital humano (39%) | ocupación y empresa (43%) |
+| Brecha de género observada / no explicada | 4% / 6% | 6% / 15% | 7% / 11% |
+| Salario horario mediano (USD PPA 2024) | 6,3 | 4,2 | 16,8 |
 
 Los salarios son declarados en una encuesta y los efectos son asociaciones, no efectos causales.
 
