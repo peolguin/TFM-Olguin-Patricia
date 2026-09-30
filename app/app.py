@@ -14,6 +14,9 @@ import plotly.express as px
 import streamlit as st
 
 CARPETA = Path(__file__).resolve().parent.parent / "modelos"
+# Paleta común del notebook, la aplicación y el resumen
+px.defaults.color_discrete_sequence = ["#2a9d8f", "#e9c46a", "#e76f51", "#264653", "#f4a261", "#8d99ae"]
+px.defaults.color_continuous_scale = ["#e76f51", "#f7f3e8", "#2a9d8f"]
 st.set_page_config(page_title="Referencia salarial para mujeres asalariadas", layout="wide")
 
 
@@ -171,6 +174,8 @@ with tabs[1]:
             else:
                 st.success("La brecha a igual perfil está por debajo del umbral del 5% de la Directiva (UE) 2023/970.")
         st.plotly_chart(px.histogram(res, x="diferencia (%)", color="situación", nbins=30,
+                                     color_discrete_map={"Dentro de la banda": "#2a9d8f", "Por debajo del mercado": "#e76f51",
+                                                         "Por encima del mercado": "#e9c46a"},
                                      title="Diferencia de cada salario con la referencia de mercado"), width="stretch")
         st.dataframe(res.round(1), width="stretch", hide_index=True)
         st.download_button("Descargar resultados", res.to_csv(index=False).encode(), "auditoria_resultados.csv")
@@ -194,7 +199,7 @@ with tabs[2]:
                                        "prima bruta": "Sin ajustar"}.get)
         fig = px.scatter_geo(terr, lat="lat", lon="lon", color=medida, size="asalariadas encuestadas", hover_name="aglomerado",
                              hover_data={"prima bruta": True, "prima ajustada": True, "prima real": True, "lat": False,
-                                         "lon": False}, color_continuous_scale="RdBu", color_continuous_midpoint=0,
+                                         "lon": False}, color_continuous_scale=["#e76f51", "#f7f3e8", "#2a9d8f"], color_continuous_midpoint=0,
                              size_max=26, projection="mercator", height=650)
         fig.update_geos(fitbounds="locations", showcountries=True, showsubunits=True)
         st.plotly_chart(fig, width="stretch")
