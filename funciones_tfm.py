@@ -9,17 +9,13 @@ reúnen en este archivo y el notebook las importa con:  from funciones_tfm impor
 Varias funciones son adaptaciones de las vistas en el máster (se indica en cada caso).
 """
 
-import io
-import os
 import re
-import zipfile
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
-import requests
 import scipy.stats as stats
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from statsmodels.stats.outliers_influence import variance_inflation_factor
@@ -31,23 +27,6 @@ SEMILLA = 42
 # ==================================================================================================================
 # 1. LECTURA DE LA EPH
 # ==================================================================================================================
-
-## Función para descargar una onda de la EPH desde el INDEC y guardarla en Drive
-def descargar_onda_indec(ano, trimestre, ruta_archivo):
-    url = f"https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_usu_{trimestre}_Trim_{ano}_txt.zip"
-    r = requests.get(url, timeout=300)
-    # Si la onda no está publicada, el INDEC devuelve una página HTML en lugar del zip
-    if r.status_code != 200 or "html" in r.headers.get("content-type", ""):
-        raise FileNotFoundError(f"El INDEC todavía no publicó la onda {trimestre}T{ano}")
-    with zipfile.ZipFile(io.BytesIO(r.content)) as z:
-        for nombre in z.namelist():
-            base = os.path.basename(nombre).lower()
-            if base.startswith("usu_individual"):
-                open(ruta_archivo(ano, trimestre, "pers"), "wb").write(z.read(nombre))
-            elif base.startswith("usu_hogar"):
-                open(ruta_archivo(ano, trimestre, "hog"), "wb").write(z.read(nombre))
-    print(f"Descargada la onda {trimestre}T{ano}")
-
 
 ## Función para leer un archivo de la EPH (separador ';' y coma decimal)
 def leer_eph(ruta):
@@ -160,19 +139,6 @@ def mediana_ponderada(valores, pesos):
 # ==================================================================================================================
 # 3. DEPURACIÓN
 # ==================================================================================================================
-
-## Función para obtener el perfil de cada variable (tipo, nulos, ceros, valores distintos y moda)
-def perfil(df):
-    filas = []
-    for col in df.columns:
-        s = df[col]
-        moda = s.mode(dropna=True)
-        filas.append({"variable": col, "tipo": str(s.dtype), "% nulos": 100 * s.isna().mean(),
-                      "% ceros (no corresponde)": 100 * (s == 0).mean() if pd.api.types.is_numeric_dtype(s) else 0.0,
-                      "valores distintos": s.nunique(),
-                      "valor más frecuente": moda.iloc[0] if len(moda) else np.nan})
-    return pd.DataFrame(filas).set_index("variable").round(1)
-
 
 ## Funciones para recodificar la actividad (CAES-Mercosur) en divisiones de 2 dígitos y ramas
 def division_caes(codigo):
@@ -289,6 +255,81 @@ def histogram_boxplot(data, xlabel=None, title=None, figsize=(9, 5), bins=60):
     plt.show()
 
 
+## Diccionario: descripción legible, bloque temático y carácter (accionable o estructural) de cada variable
+DESCRIPCION = {
+    "AGLOMERADO": "Aglomerado urbano", "CH10": "Asiste o asistió a un establecimiento educativo",
+    "PP03C": "Tiene más de un empleo", "PP3F_TOT": "Horas en otras ocupaciones", "PP03G": "Quería trabajar más horas",
+    "PP03H": "Disponibilidad para trabajar más horas", "PP03I": "Buscó trabajar más horas",
+    "PP03J": "Buscó otro empleo", "PP03K": "Motivo de búsqueda de otro empleo", "INTENSI": "Intensidad de la ocupación",
+    "PP04A1": "Nivel del Estado (nacional, provincial, municipal)", "PP04B1": "Servicio doméstico en casa de familia",
+    "PP04B2": "Cantidad de casas en que trabaja (servicio doméstico)", "PP07C": "Empleo con fecha de finalización",
+    "PP07E": "Período de prueba, beca o pasantía", "PP07F1": "Le dan de comer en el trabajo",
+    "PP07F3": "Le dan productos o mercadería", "PP07F4": "Otros beneficios (celular, auto, pasajes)",
+    "PP07F5": "No recibe beneficios en especie", "PP07G1": "Vacaciones pagas", "PP07G2": "Aguinaldo",
+    "PP07G3": "Días pagos por enfermedad", "PP07G4": "Obra social por el empleo",
+    "PP07H": "Descuento jubilatorio (empleo registrado)", "PP07I": "Aporta por su cuenta a la jubilación",
+    "PP07J": "Turno de trabajo", "PP07K": "Comprobante de pago", "PP07L": "El recibo abarca todo el sueldo",
+    "PP09A": "Trabaja en CABA, GBA o ambos", "PP07B1_01": "Cobra un plan social por este trabajo",
+    "SECTOR": "Sector formal, informal u hogares (INDEC)", "PP07F1_1": "Usa sus propias maquinarias o equipos",
+    "IV1": "Tipo de vivienda", "IV2": "Ambientes de la vivienda", "IV3": "Material de los pisos",
+    "IV4": "Cubierta del techo", "IV5": "Techo con cielorraso", "IV7": "Fuente del agua", "IV9": "Ubicación del baño",
+    "IV10": "Tipo de inodoro", "IV11": "Desagüe del baño", "IV12_1": "Vivienda cerca de basural",
+    "IV12_2": "Vivienda en zona inundable", "II2": "Cuartos para dormir", "II3": "Usa un ambiente para trabajar",
+    "II4_1": "Tiene cuarto de cocina", "II4_2": "Tiene lavadero", "II4_3": "Tiene garage", "II5": "Duermen en cocina, lavadero o garage",
+    "II6": "Usa cocina, lavadero o garage para trabajar", "II7": "Tenencia de la vivienda", "II8": "Combustible para cocinar",
+    "V2": "Hogar con jubilación o pensión", "V5_01": "Hogar con AUH o Asignación por Embarazo",
+    "V5_02": "Hogar con otro plan social", "V6": "Recibe mercadería del gobierno, iglesias, etc.",
+    "V7": "Recibe mercadería de familiares o vecinos", "V11_01": "Hogar con beca de estudio del gobierno",
+    "V12": "Recibe cuota alimentaria o ayuda de personas fuera del hogar", "V13": "Gastó ahorros",
+    "V14": "Pidió préstamos a familiares o amigos", "V15": "Pidió préstamos a bancos o financieras",
+    "V16": "Compra en cuotas o al fiado", "V17": "Vendió pertenencias", "V22_01": "Retroactivo de jubilación",
+    "V22_02": "Retroactivo de jubilación de ama de casa", "V22_03": "Retroactivo de otras pensiones",
+    "IX_TOT": "Miembros del hogar", "IX_MEN10": "Miembros menores de 10 años", "menores_6": "Menores de 6 años en el hogar",
+    "menores_18": "Menores de 18 años en el hogar", "mayores_65": "Mayores de 65 años en el hogar",
+    "hijos_propios_menores_6": "Hijos propios menores de 6 años", "hijos_propios_menores_18": "Hijos propios menores de 18 años",
+    "educ_pareja": "Años de educación de la pareja", "pareja_ocupada": "La pareja está ocupada",
+    "clima_educativo": "Clima educativo de otros adultos del hogar (años)",
+    "edad": "Edad", "anios_educ": "Años de educación", "exp_pot": "Experiencia potencial (años)",
+    "exp_pot2": "Experiencia potencial al cuadrado", "parentesco": "Parentesco con el jefe/a de hogar",
+    "estado_civil": "Estado civil", "cobertura_salud": "Cobertura de salud", "lugar_nacimiento": "Lugar de nacimiento",
+    "residencia_5_anios": "Dónde vivía hace 5 años", "cno_caracter": "Carácter de la ocupación (CNO, 2 dígitos)",
+    "cno_jerarquia": "Jerarquía de la ocupación", "cno_tecnologia": "Tecnología que utiliza",
+    "calificacion": "Calificación de la ocupación", "caes_division": "Actividad del establecimiento (CAES, 2 dígitos)",
+    "rama": "Rama de actividad", "tamano_establecimiento": "Personas que trabajan en el establecimiento",
+    "sector": "Sector estatal o privado", "lugar_trabajo": "Lugar donde realiza sus tareas",
+    "antiguedad": "Antigüedad en el empleo (tramos de 1 a 6)", "jornada_parcial": "Jornada parcial (< 35 horas)",
+    "hacinamiento": "Personas por cuarto para dormir", "otros_ocupados_hogar": "Otros ocupados en el hogar",
+    "otras_mujeres_adultas": "Otras mujeres adultas en el hogar", "realiza_tareas_casa": "Realiza las tareas de la casa",
+    "servicio_domestico_hogar": "El hogar tiene servicio doméstico", "recibe_ayuda_tareas": "Otras personas ayudan con las tareas",
+}
+
+
+def bloque_de(v):
+    if v in ("anios_educ", "exp_pot", "exp_pot2", "edad", "CH10", "antiguedad"):
+        return "Capital humano"
+    if v in ("cno_caracter", "cno_jerarquia", "cno_tecnologia", "calificacion", "caes_division", "rama",
+             "tamano_establecimiento", "sector", "PP04A1", "lugar_trabajo", "PP04B1", "PP04B2", "SECTOR"):
+        return "Ocupación y empresa"
+    if v.startswith("PP0") or v in ("INTENSI", "jornada_parcial", "PP3F_TOT"):
+        return "Condiciones de trabajo"
+    if v in ("parentesco", "estado_civil", "menores_6", "menores_18", "mayores_65", "otros_ocupados_hogar",
+             "otras_mujeres_adultas", "realiza_tareas_casa", "servicio_domestico_hogar", "recibe_ayuda_tareas", "IX_TOT",
+             "IX_MEN10", "cobertura_salud", "hijos_propios_menores_6", "hijos_propios_menores_18", "educ_pareja",
+             "pareja_ocupada", "clima_educativo"):
+        return "Hogar y cuidados"
+    if v.startswith(("IV", "II")) or v == "hacinamiento":
+        return "Vivienda y hábitat"
+    if re.match(r"V\d", v):
+        return "Estrategias del hogar"
+    return "Territorio y migración"
+
+
+CARACTER = {"Capital humano": "Accionable (persona)", "Ocupación y empresa": "Accionable (empresa)",
+            "Condiciones de trabajo": "Accionable (empresa y política laboral)",
+            "Hogar y cuidados": "Estructural (política pública)", "Vivienda y hábitat": "Estructural (política pública)",
+            "Estrategias del hogar": "Estructural (política pública)", "Territorio y migración": "Estructural (política pública)"}
+
+
 # ==================================================================================================================
 # 4. MODELADO Y EVALUACIÓN
 # ==================================================================================================================
@@ -376,3 +417,231 @@ def heckman_dos_etapas(datos, formula_seleccion, formula_salario, pesos, grupos)
     b = corregido.params["imr"]
     sigma = np.sqrt((corregido.resid ** 2).mean() + b ** 2 * (s["imr"] * (s["imr"] + s["xb"])).mean())
     return probit, sin_corregir, corregido, datos, b / sigma
+
+
+DESCRIPCION.update({"hijos_0_5": "Hijos propios de 0 a 5 años", "hijos_6_17": "Hijos propios de 6 a 17 años",
+                    "nivel_educativo": "Nivel educativo"})
+
+
+# ==================================================================================================================
+# 5. TERRITORIO, RECURSOS NATURALES Y PODER DE COMPRA
+# ==================================================================================================================
+
+## Polos de recursos naturales: aglomerados de la EPH cuya economía gira en torno a los hidrocarburos o la minería
+POLOS = {17: "Hidrocarburos", 9: "Hidrocarburos",                                   # Vaca Muerta y Golfo San Jorge
+         22: "Minería", 23: "Minería", 19: "Minería", 27: "Minería", 20: "Minería"}  # litio, cobre y oro
+## Divisiones CAES de empleo directo en el sector: extracción de minerales e hidrocarburos (05-09) y refinación (19)
+DIVISIONES_RECURSOS = [5, 6, 7, 8, 9, 19]
+
+## Tamaño de la familia de referencia: hogar tipo 2 del INDEC (pareja de 35 y 31 años con dos hijos de 6 y 8) = 3,09
+## adultos equivalentes, casi igual a la familia de 3 adultos equivalentes de Allen (2001)
+ADULTOS_EQUIVALENTES = 3.09
+HORAS_MES_COMPLETO = 40 * 4.3           # jornada completa de 40 horas semanales
+
+
+## Función para calcular la Canasta Básica Total (CBT) por adulto equivalente de cada región y trimestre de la EPH
+def cbt_por_trimestre(canasta):
+    """La CBT es mensual; el salario de la EPH (P21) corresponde al mes anterior a la entrevista, así que para cada
+       trimestre se promedia la CBT de los tres meses anteriores (por ejemplo, para el 1T2024: dic-2023 a feb-2024)."""
+    canasta = canasta.assign(mes=pd.PeriodIndex(canasta["mes"], freq="M"))
+    filas = []
+    for ano in range(2024, 2027):
+        for tri in range(1, 5):
+            meses = pd.period_range(pd.Period(f"{ano}-{3 * tri - 2:02d}", "M") - 1, periods=3, freq="M")
+            sub = canasta[canasta["mes"].isin(meses)]
+            if sub["mes"].nunique() == 3:
+                filas += [{"periodo": ano * 10 + tri, "region": r, "cbt": v}
+                          for r, v in sub.groupby("region")["cbt_adulto_equivalente"].mean().items()]
+    return pd.DataFrame(filas)
+
+
+## Función para calcular la paridad de poder adquisitivo (PPA) de 2024 de Argentina, que el Banco Mundial no publica
+def ppa_argentina_2024(ppa_2021, ipc):
+    """Extrapola la PPA de 2021 con la inflación relativa de Argentina frente a Estados Unidos (método habitual del
+       Banco Mundial para los años sin relevamiento de precios). IPC de EE.UU. (BLS, CPI-U): 270,970 (2021) y
+       313,689 (2024)."""
+    inflacion_ar = ipc[ipc.index.year == 2024].mean() / ipc[ipc.index.year == 2021].mean()
+    return ppa_2021 * inflacion_ar / (313.689 / 270.970)
+
+
+# ==================================================================================================================
+# 6. COMPARACIÓN CON BRASIL Y ESPAÑA
+# ==================================================================================================================
+
+## Variables comunes a las tres encuestas (EPH, PNAD Contínua y ECV)
+COMUNES = ["anios_educ", "exp_pot", "exp_pot2", "calificacion", "rama", "formal", "temporal", "jornada_parcial",
+           "en_pareja", "menores_6", "menores_18", "otros_ocupados", "gran_ciudad"]
+
+## Ramas comunes a partir de la sección de la CIIU/CNAE (letra)
+SECCION_A_RAMA = {"A": "Agro y minería", "B": "Agro y minería", "C": "Industria", "D": "Construcción y servicios básicos",
+                  "E": "Construcción y servicios básicos", "F": "Construcción y servicios básicos", "G": "Comercio",
+                  "H": "Transporte e información", "J": "Transporte e información", "I": "Hoteles y restaurantes",
+                  "K": "Finanzas y servicios a empresas", "L": "Finanzas y servicios a empresas",
+                  "M": "Finanzas y servicios a empresas", "N": "Finanzas y servicios a empresas",
+                  "O": "Administración pública", "P": "Enseñanza", "Q": "Salud y servicios sociales",
+                  "R": "Otros servicios", "S": "Otros servicios", "U": "Otros servicios", "T": "Servicio doméstico"}
+## Divisiones de 2 dígitos -> sección (letra): (última división de la sección, letra)
+DIVISION_A_SECCION = [(3, "A"), (9, "B"), (33, "C"), (35, "D"), (39, "E"), (43, "F"), (48, "G"), (53, "H"), (56, "I"),
+                      (63, "J"), (66, "K"), (68, "L"), (75, "M"), (82, "N"), (84, "O"), (85, "P"), (88, "Q"), (93, "R"),
+                      (96, "S"), (98, "T"), (99, "U")]
+## Ramas de la EPH -> ramas comunes
+RAMA_EPH_A_COMUN = {"Agro y pesca": "Agro y minería", "Minería": "Agro y minería",
+                    "Electricidad, gas y agua": "Construcción y servicios básicos",
+                    "Construcción": "Construcción y servicios básicos", "Transporte": "Transporte e información",
+                    "Información y comunicación": "Transporte e información",
+                    "Finanzas e inmobiliarias": "Finanzas y servicios a empresas",
+                    "Servicios profesionales y empresariales": "Finanzas y servicios a empresas",
+                    "Organismos extraterritoriales": "Otros servicios"}
+
+
+def rama_comun(division):
+    """Rama común a partir de la división de actividad (2 dígitos)."""
+    if pd.isna(division):
+        return np.nan
+    return next((SECCION_A_RAMA[s] for tope, s in DIVISION_A_SECCION if division <= tope), np.nan)
+
+
+def calificacion_ciuo(gran_grupo):
+    """Calificación a partir del gran grupo de la CIUO-08 (1 dígito): alta = directivos, profesionales y técnicos;
+       baja = ocupaciones elementales; media = el resto (0 = fuerzas armadas)."""
+    if pd.isna(gran_grupo):
+        return np.nan
+    return {1: "alta", 2: "alta", 3: "alta", 9: "baja"}.get(int(gran_grupo), "media")
+
+
+## Función para armar la base común de Argentina a partir de la base de estudio del notebook
+def base_comun_argentina(df, mas_500):
+    return pd.DataFrame({
+        "pais": "Argentina", "periodo": df["periodo"].astype(str), "t": df["t"], "id_hogar": df["id_hogar"],
+        "peso": df["PONDIIO"], "mujer": (df["CH04"] == 2) * 1, "salario_horario": df["salario_horario"],
+        "anios_educ": df["anios_educ"], "exp_pot": df["exp_pot"],
+        "calificacion": df["calificacion"].map({"Profesional": "alta", "Técnica": "alta", "Operativa": "media",
+                                                "No calificada": "baja"}),
+        "rama": df["rama"].replace(RAMA_EPH_A_COMUN), "formal": df["PP07H"], "temporal": df["PP07C"].fillna(0),
+        "jornada_parcial": df["jornada_parcial"], "en_pareja": df["estado_civil"].isin(["Unida", "Casada"]) * 1.0,
+        "menores_6": df["menores_6"], "menores_18": df["menores_18"], "otros_ocupados": df["otros_ocupados_hogar"],
+        "gran_ciudad": (mas_500.astype(str).str.upper() == "S") * 1.0})
+
+
+## Funciones de preparación de las bases de Brasil y España (se usan una sola vez: el resultado se guarda en Drive)
+def preparar_brasil(carpeta, ondas):
+    """PNAD Contínua (IBGE): archivos de ancho fijo leídos con DuckDB, con las posiciones del programa de lectura del IBGE.
+       Devuelve los asalariados de 18 a 60 años con las variables comunes."""
+    import io, zipfile
+    from pathlib import Path
+    import duckdb
+    cols = ["Ano", "Trimestre", "UPA", "V1008", "V1014", "V1023", "V1028", "V2005", "V2007", "V2009", "VD3005",
+            "VD4002", "VD4009", "VD4012", "VD4016", "V4039", "V4010", "V4013", "V4025"]
+    texto = {"UPA", "V1008", "V1014", "V4010", "V4013"}
+    with zipfile.ZipFile(Path(carpeta) / "Dicionario_e_input.zip") as z:
+        programa = z.read(next(n for n in z.namelist() if re.search(r"input.*\.txt$", n, re.I))).decode("latin-1")
+    pos = {nombre: (int(ini), int(ancho)) for ini, nombre, ancho in re.findall(r"@(\d+)\s+(\w+)\s+\$?(\d+)\.", programa)}
+    partes = []
+    for a, q in ondas:
+        with zipfile.ZipFile(Path(carpeta) / f"PNADC_{q:02d}{a}.zip") as z:
+            txt = Path(z.extract(next(n for n in z.namelist() if n.lower().endswith(".txt")), "/tmp"))
+        columnas = ", ".join(f"trim(substr(line, {pos[c][0]}, {pos[c][1]})) AS {c}" if c in texto else
+                             f"TRY_CAST(NULLIF(trim(substr(line, {pos[c][0]}, {pos[c][1]})), '') AS DOUBLE) AS {c}" for c in cols)
+        partes.append(duckdb.sql(f"""
+            WITH p AS (SELECT {columnas} FROM read_csv('{txt}', columns={{'line': 'VARCHAR'}}, header=false, delim='\\t',
+                                                       quote='', escape='', auto_detect=false)),
+            p2 AS (SELECT *, UPA || '_' || V1008 || '_' || V1014 AS id_hogar FROM p),
+            hogar AS (SELECT id_hogar, SUM(CASE WHEN V2009 < 6 THEN 1 ELSE 0 END) AS menores_6,
+                             SUM(CASE WHEN V2009 < 18 THEN 1 ELSE 0 END) AS menores_18,
+                             SUM(CASE WHEN VD4002 = 1 THEN 1 ELSE 0 END) AS ocupados,
+                             MAX(CASE WHEN V2005 IN (2, 3) THEN 1 ELSE 0 END) AS hay_conyuge FROM p2 GROUP BY id_hogar)
+            SELECT p2.*, hogar.menores_6, hogar.menores_18, hogar.ocupados, hogar.hay_conyuge FROM p2 JOIN hogar USING (id_hogar)
+            WHERE VD4002 = 1 AND VD4009 BETWEEN 1 AND 7 AND V2009 BETWEEN 18 AND 60 AND VD4016 > 0 AND V4039 BETWEEN 1 AND 98
+        """).df())
+        txt.unlink()
+    br = pd.concat(partes, ignore_index=True)
+    gran_grupo = pd.to_numeric(br["V4010"].str[:1], errors="coerce")
+    division = pd.to_numeric(br["V4013"].str.zfill(5).str[:2], errors="coerce")
+    return pd.DataFrame({
+        "pais": "Brasil", "periodo": (br["Ano"] * 10 + br["Trimestre"]).astype(int).astype(str),
+        "t": ((br["Ano"] - 2024) * 4 + br["Trimestre"] - 1).astype(int), "id_hogar": "BR_" + br["id_hogar"],
+        "peso": br["V1028"], "mujer": (br["V2007"] == 2) * 1, "salario_horario": br["VD4016"] / (br["V4039"] * 4.3),
+        "anios_educ": br["VD3005"], "exp_pot": (br["V2009"] - br["VD3005"] - 6).clip(lower=0),
+        "calificacion": gran_grupo.map(calificacion_ciuo), "rama": division.map(rama_comun),
+        "formal": (br["VD4012"] == 1) * 1.0, "temporal": (br["V4025"] == 1) * 1.0, "jornada_parcial": (br["V4039"] < 35) * 1.0,
+        "en_pareja": (br["V2005"].isin([2, 3]) | ((br["V2005"] == 1) & (br["hay_conyuge"] == 1))) * 1.0,
+        "menores_6": br["menores_6"], "menores_18": br["menores_18"], "otros_ocupados": br["ocupados"] - 1,
+        "gran_ciudad": br["V1023"].isin([1, 2]) * 1.0})
+
+
+def leer_ecv(carpeta, anio, letra):
+    """Lee el fichero P, R o D de la ECV (zip del INE con un zip por fichero)."""
+    import io, zipfile
+    from pathlib import Path
+    with zipfile.ZipFile(Path(carpeta) / f"datos_{anio}.zip") as z:
+        interno = next(n for n in z.namelist() if re.search(rf"ECV_T{letra}_{anio}\.zip$", n, re.I))
+        with zipfile.ZipFile(io.BytesIO(z.read(interno))) as z2:
+            archivo = next(n for n in z2.namelist() if re.search(rf"ECV_T{letra}_{anio}\.(tab|csv)$", n, re.I))
+            return pd.read_csv(io.BytesIO(z2.read(archivo)), sep="\t", low_memory=False,
+                               dtype={"PE041": str, "PL051A": str, "PL111AA": str})
+
+
+def preparar_espana(carpeta, anios):
+    """Encuesta de Condiciones de Vida (INE): asalariados hoy (PL040A = 3) que lo fueron los 12 meses del año anterior
+       (el ingreso PY010N es del año anterior). PB205 = 1: convive con su pareja. PL141: 11/12 temporal escrito/verbal,
+       21/22 indefinido escrito/verbal; formal = contrato escrito."""
+    educ_es = {"0": 0, "1": 6, "2": 10, "3": 12, "4": 13, "5": 15, "6": 16, "7": 17, "8": 20}   # CINE-2011 -> años
+    partes = []
+    for anio in anios:
+        p, r, d = (leer_ecv(carpeta, anio, letra) for letra in ("p", "r", "d"))
+        r["hogar"] = r["RB030"] // 100
+        hogar = (r.assign(menores_6=r.RB082 < 6, menores_18=r.RB082 < 18, ocupados=r.RB211 == 1)
+                  .groupby("hogar")[["menores_6", "menores_18", "ocupados"]].sum())
+        p = (p.merge(r[["RB030", "RB082", "hogar"]], left_on="PB030", right_on="RB030")
+              .join(hogar, on="hogar").merge(d[["DB030", "DB100"]], left_on="hogar", right_on="DB030"))
+        p = p[(p.PL040A == 3) & (p.PL073.fillna(0) + p.PL074.fillna(0) == 12) & p.RB082.between(18, 60)
+              & (p.PY010N > 0) & p.PL060.between(1, 98)]
+        print(f"ECV {anio}: {len(p):,} asalariados | en pareja {(p.PB205 == 1).mean():.0%} | "
+              f"temporales {p.PL141.isin([11, 12]).mean():.0%} (EPA: ~16%)")
+        educ = p["PE041"].str.strip().str[:1].map(educ_es)
+        partes.append(pd.DataFrame({
+            "pais": "España", "periodo": f"ECV {anio}", "t": anio - 2024, "id_hogar": "ES_" + p["hogar"].astype(str),
+            "peso": p["PB040"], "mujer": (p["PB150"] == 2) * 1, "salario_horario": p["PY010N"] / 12 / (p["PL060"] * 4.3),
+            "anios_educ": educ, "exp_pot": (p["RB082"] - educ - 6).clip(lower=0),
+            "calificacion": pd.to_numeric(p["PL051A"].str[:1], errors="coerce").map(calificacion_ciuo),
+            "rama": p["PL111AA"].str.strip().str.upper().map(SECCION_A_RAMA),
+            "formal": p["PL141"].isin([11, 21]).where(p["PL141"].notna()) * 1.0, "temporal": p["PL141"].isin([11, 12]) * 1.0,
+            "jornada_parcial": (p["PL060"] < 35) * 1.0, "en_pareja": (p["PB205"] == 1) * 1.0, "menores_6": p["menores_6"],
+            "menores_18": p["menores_18"], "otros_ocupados": p["ocupados"] - 1, "gran_ciudad": (p["DB100"] == 1) * 1.0}))
+    return pd.concat(partes, ignore_index=True)
+
+
+def validar_con_ees(ruta_zip, ecv):
+    """Estima el mismo modelo laboral en la Encuesta de Estructura Salarial 2022 (nóminas de empresas) y en la ECV de
+       mujeres: si coinciden el signo y el orden de los efectos, la ECV es válida para la comparación."""
+    import io, zipfile
+    import statsmodels.formula.api as smf
+    with zipfile.ZipFile(ruta_zip) as z:
+        nombre = next(n for n in z.namelist() if n.lower().endswith((".tab", ".csv")))
+        ees = pd.read_csv(io.BytesIO(z.read(nombre)), sep="\t", encoding="latin-1", low_memory=False,
+                          dtype={"CNACE": str, "CNO1": str, "ANOS2": str})
+    ees.columns = ees.columns.str.strip().str.upper()
+    ees = ees[(ees.SEXO == 6) & (ees.DRELABM == 31) & (ees.SIESPM1 == 6)]      # mujeres con el mes completo trabajado
+    horas = (ees.JSP1 + ees.JSP2 / 60) * 4.35 + ees.HEXTRA
+    edad = ees.ANOS2.str.zfill(2).map({"01": 18, "02": 25, "03": 35, "04": 45, "05": 55, "06": 62})
+    educ = ees.ESTU.map({1: 3, 2: 6, 3: 10, 4: 12, 5: 14, 6: 15, 7: 17})
+    cno = ees.CNO1.str[0]
+    ees = pd.DataFrame({"peso": ees.FACTOTAL, "salario_horario": (ees.SALBASE + ees.COMSAL + ees.PHEXTRA) / horas,
+                        "anios_educ": educ, "exp_pot": (edad - educ - 6).clip(lower=0),
+                        "calificacion": np.select([cno.isin(list("ABCD")), cno.isin(list("OP"))], ["alta", "baja"], "media"),
+                        "rama": ees.CNACE.str[0].map(SECCION_A_RAMA), "temporal": (ees.TIPOCON == 2) * 1.0,
+                        "jornada_parcial": (ees.TIPOJOR == 2) * 1.0})[(edad.between(18, 60))].dropna()
+    ees = ees[ees.salario_horario > 0]
+    formula = ("y ~ anios_educ + exp_pot + I(exp_pot ** 2) + C(calificacion, Treatment('media')) + C(rama) + temporal"
+               " + jornada_parcial")
+    terminos = {"anios_educ": "Año adicional de educación",
+                "C(calificacion, Treatment('media'))[T.alta]": "Ocupación calificada (vs. media)",
+                "C(calificacion, Treatment('media'))[T.baja]": "Ocupación no calificada (vs. media)",
+                "temporal": "Contrato temporal", "jornada_parcial": "Jornada parcial"}
+    efectos = {}
+    for fuente, d in {"ECV (hogares)": ecv, "EES 2022 (empresas)": ees}.items():
+        d = d.dropna(subset=["anios_educ", "calificacion", "rama"]).assign(
+            y=lambda x: np.log(x.salario_horario / mediana_ponderada(x.salario_horario, x.peso)))
+        modelo = smf.wls(formula, data=d, weights=d.peso / d.peso.mean()).fit()
+        efectos[fuente] = {etiqueta: 100 * (np.exp(modelo.params[t]) - 1) for t, etiqueta in terminos.items()}
+    return pd.DataFrame(efectos).round(1)
