@@ -11,14 +11,18 @@
 La Encuesta Permanente de Hogares (EPH) del INDEC es la fuente más usada para estudiar el mercado de trabajo argentino,
 pero sus cuadros publicados no responden preguntas como:
 
-* ¿cuánto paga el mercado por un perfil concreto?
-* ¿cuánto de la ventaja salarial de una ciudad desaparece al descontar su costo de vida?
-* ¿alcanza el salario de una asalariada para sostener a una familia?
+* ¿cuánto paga el mercado por un perfil concreto, y con qué margen?
+* ¿cuánto de la diferencia salarial entre ciudades desaparece al descontar el costo de vida?
+* ¿llega la riqueza de Vaca Muerta y de la minería al salario de las mujeres?
+* ¿alcanza el salario de una asalariada para sostener a una familia (*welfare ratio* de Allen)?
+* ¿cuánto de la brecha de género no se explica por el perfil, y supera el umbral del 5% de la Directiva europea de
+  transparencia retributiva?
 
-Este trabajo aprovecha los microdatos para obtener esa información indirecta. Identifica los determinantes del salario
-de las mujeres asalariadas y comprueba si sirven para predecir el salario a un año. Además, convierte el modelo en una
-**herramienta de referencia salarial** que puede usar una empresa (para auditar su nómina) o un organismo público (para
-monitorear el mercado de trabajo femenino).
+Este trabajo aprovecha los microdatos para obtener esa información indirecta. En la **parte I** identifica los
+determinantes del salario de las mujeres asalariadas en Argentina, comprueba si sirven para predecir el salario a un año
+y convierte el modelo en una **herramienta de referencia salarial** que puede usar una empresa (para auditar su nómina) o
+un organismo público (para monitorear el mercado de trabajo femenino). En la **parte II** repite el análisis con las
+mismas variables en Brasil y España, para distinguir lo que es propio del mercado argentino de lo que es general.
 
 * **Datos:**
   * EPH, bases de personas y hogares, 1T2024–1T2026;
