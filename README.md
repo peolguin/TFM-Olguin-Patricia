@@ -6,7 +6,7 @@
 **Autora:** Patricia Olguín · 2026
 
 **Aplicación en línea:** [tfm-olguin-patricia.streamlit.app](https://tfm-olguin-patricia.streamlit.app/)
-**Notebook en Colab:** [abrir](https://colab.research.google.com/github/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.ipynb)
+**Notebook en Colab:** [formato ipynb](https://colab.research.google.com/github/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.ipynb) y [html](https://htmlpreview.github.io/?https://github.com/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.html)
 
 ## De qué trata
 
