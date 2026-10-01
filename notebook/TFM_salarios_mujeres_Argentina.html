@@ -13218,93 +13218,157 @@ rotativo (cada hogar permanece cuatro años), así que su R² en el último per�
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d959c9b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="CONCLUSIONES">CONCLUSIONES<a class="anchor-link" href="#CONCLUSIONES">¶</a></h1><h2 id="12.-Conclusiones-generales">12. Conclusiones generales<a class="anchor-link" href="#12.-Conclusiones-generales">¶</a></h2><p>Resumen automático de los resultados de esta ejecución:</p>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4wl2EzxuzrLG">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>En síntesis, los resultados obtenidos fueron los siguientes:</p>
 <ul>
 <li>Datos y variables: 319 variables de personas y hogares, 97 candidatas y 26 seleccionadas.</li>
-<li>Predicción a un año (1T2026): LightGBM R² = 0.44; regresión lineal R² = 0.40; con origen móvil, entre 0.44 y 0.55. PSI máximo 0.039; Wald p = 0.0000.</li>
+<li>Predicción a un año (1T2026): LightGBM R² = 0,44; regresión lineal R² = 0,40; con origen móvil, entre 0,44 y 0,55. PSI máximo 0,039; Wald p &lt; 0,001.</li>
 <li>Principales determinantes (SHAP): Aglomerado urbano, Descuento jubilatorio (empleo registrado), Jornada parcial (&lt; 35 horas), Años de educación, Comprobante de pago.</li>
 <li>Reparto de la importancia: Accionable (empresa y política laboral): 38%; Accionable (empresa): 25%; Accionable (persona): 14%; Estructural (política pública): 23%.</li>
-<li>Hijos: cada hijo de 0 a 5 años reduce 6.2 puntos la probabilidad de estar ocupada.</li>
+<li>Hijos: cada hijo de 0 a 5 años reduce 6,2 puntos la probabilidad de estar ocupada.</li>
 <li>Territorio: diferencia entre la región mejor y peor pagada a igual perfil: 39 puntos en pesos y 9 puntos descontando el costo de vida.</li>
 <li>Polos de recursos (prima a igual perfil): hidrocarburos +26%, minería -12%.</li>
-<li>Welfare ratio mediano de las asalariadas (último trimestre): 0.75 familias tipo.</li>
-<li>Brecha de género: observada 4.8%; no explicada 6.4% (umbral de la Directiva: 5%).</li>
-<li>Bandas del 90%: cobertura real en el 1T2026 = 85.2%.</li>
-<li>Salario horario mediano de las asalariadas (USD PPA 2024): Argentina 6.3, Brasil 4.2, España 16.8.</li>
+<li>Welfare ratio mediano de las asalariadas (último trimestre): 0,75 familias tipo.</li>
+<li>Brecha de género: observada 4,8%; no explicada 6,4% (umbral de la Directiva: 5%).</li>
+<li>Bandas del 90%: cobertura real en el 1T2026 = 85,2%.</li>
+<li>Salario horario mediano de las asalariadas (USD PPA 2024): Argentina 6,3, Brasil 4,2, España 16,8.</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51cb91e2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d959c9b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Interpretaci%C3%B3n-final">Interpretación final<a class="anchor-link" href="#Interpretaci%C3%B3n-final">¶</a></h3><ol>
-<li><strong>Qué determina el salario.</strong> El territorio, el registro del empleo, la jornada, la educación y la ocupación y
-actividad del puesto concentran la mayor parte del peso explicativo. Cada año de educación suma alrededor de un 3,4%
-al salario por hora y el empleo registrado cerca de un 25%, a igualdad del resto.</li>
-<li><strong>El empleo pesa más que la formación.</strong> Las condiciones del puesto explican las diferencias salariales mucho más
-que la educación y la experiencia: el 63% de lo que explica el modelo depende de las empresas y de la política
-laboral, el 14% de la propia trabajadora y el 23% de factores estructurales.</li>
-<li><strong>Predicción a un año.</strong> El modelo explica cerca de la mitad de la variación del salario relativo en los trimestres
-siguientes y algo menos en el 1T2026. La composición de la población es estable, pero algunos "precios" cambian (la
-prima del empleo registrado cayó en 2025): el modelo debe reentrenarse cada trimestre.</li>
-<li><strong>Hogar y cuidados.</strong> La maternidad no reduce el salario <em>por hora</em> de las asalariadas, sino la probabilidad de
-trabajar (sobre todo de las menos educadas) y las horas. Corrigiendo el sesgo de selección, el retorno de la
-educación sube del 10% al 13% por año.</li>
-<li><strong>Territorio y costo de vida.</strong> A igual perfil, la distancia entre regiones es de casi 40 puntos en pesos y de menos
-de 10 al descontar la canasta regional: la "ventaja patagónica" y la "desventaja del Norte" son sobre todo costo de
-vida. Las diferencias reales son entre ciudades.</li>
-<li><strong>Recursos naturales.</strong> El beneficio para las mujeres llega por el mercado de trabajo local más que por el empleo
-directo. Los polos petroleros pagan un 5,5% más en términos reales; los mineros, todavía el promedio.</li>
-<li><strong>Bienestar material.</strong> Medido con el <em>welfare ratio</em> de Allen y la canasta oficial, el salario mediano de una
-asalariada a jornada completa cubre tres cuartos de la canasta básica de una familia tipo; solo con título superior
-la supera.</li>
-<li><strong>Brecha de género.</strong> Pequeña en lo observado (4,8%), mayor a igual perfil (6,4%) y por encima del umbral del 5% de
-la Directiva europea en el sector privado de mercado y en la salud.</li>
-<li><strong>Comparación internacional.</strong> Argentina, Brasil y España premian los mismos factores con distinta intensidad: la
-escala por calificación es mucho más empinada en Brasil, la informalidad pesa más en América Latina y la jornada
-parcial solo se paga bien por hora en los países latinoamericanos. En los tres, la brecha de género a igual perfil
-supera el 5% (6% en Argentina, 11% en España y 15% en Brasil). En poder de compra, una hora de trabajo de la asalariada
-mediana vale 6,3 dólares internacionales en Argentina, 4,2 en Brasil y 16,8 en España.</li>
-</ol>
-<h3 id="Aportes-del-trabajo">Aportes del trabajo<a class="anchor-link" href="#Aportes-del-trabajo">¶</a></h3><ul>
-<li><strong>Información que no está en los cuadros publicados.</strong> El salario de mercado de un perfil concreto, la prima real de
-cada ciudad, el efecto de los polos de recursos naturales y el <em>welfare ratio</em> por perfil se obtienen combinando los
-microdatos de la EPH con la canasta regional del INDEC.</li>
-<li><strong>Variables que la EPH no pregunta</strong>, construidas con todos los miembros del hogar: hijos propios, educación de la
-pareja y clima educativo.</li>
-<li><strong>La estabilidad como hipótesis, no como supuesto:</strong> validación fuera de tiempo, origen móvil, PSI y prueba de Wald.</li>
-<li><strong>Una comparación internacional con la misma vara:</strong> las mismas 13 variables y la misma variable objetivo relativa en
-tres encuestas distintas permiten separar lo que es propio del mercado argentino de lo que es general.</li>
-<li><strong>Del modelo a la herramienta:</strong> bandas con garantía estadística, auditoría de nómina con la lógica de la Directiva
-europea y monitoreo, en una aplicación que puede usar una empresa o un organismo público.</li>
+<h1 id="CONCLUSIONES">CONCLUSIONES<a class="anchor-link" href="#CONCLUSIONES">¶</a></h1><h2 id="12.-Conclusiones-generales">12. Conclusiones generales<a class="anchor-link" href="#12.-Conclusiones-generales">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7bf5fc9b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Este trabajo se propuso <strong>determinar los factores que influyen en el salario de las mujeres asalariadas en Argentina y predecir sus valores en el corto plazo</strong>, ofreciendo una <strong>perspectiva comparativa con Brasil y España</strong> y desarrollando una <strong>herramienta de referencia salarial</strong>. Para ello, se aprovecharon los microdatos de la Encuesta Permanente de Hogares (EPH) del INDEC, lo que permitió obtener información indirecta valiosa para preguntas no cubiertas por los cuadros oficiales.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6cbb62ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>1. Determinantes del salario y su peso (parte I, Argentina):</strong></p>
+<ul>
+<li><strong>Factores clave:</strong> El análisis identificó que el territorio (aglomerado urbano), el registro del empleo (descuento jubilatorio), la jornada laboral (parcial), los años de educación y el tipo de ocupación y actividad son los principales factores que concentran el peso explicativo del salario. Cada año adicional de educación se asocia con un aumento aproximado del 3,4% en el salario por hora, mientras que el empleo registrado implica cerca de un 25% más.</li>
+<li><strong>Empleo frente a formación:</strong> Las condiciones del puesto de trabajo (como el registro, la jornada y la ocupación) tienen un peso significativamente mayor (63%) en la explicación de las diferencias salariales que la educación y la experiencia (14%). Los factores estructurales (territorio, vivienda, hogar) representan el 23% restante. Esto sugiere que las políticas empresariales y laborales tienen un gran impacto en la estructura salarial.</li>
+<li><strong>Hogar y cuidados:</strong> La maternidad no reduce el salario por hora de las asalariadas, sino que afecta principalmente la probabilidad de acceder al empleo (con una reducción de 6,2 puntos porcentuales por cada hijo de 0 a 5 años) y las horas trabajadas. La corrección del sesgo de selección reveló que el retorno de la educación para las mujeres que trabajan es superior (del 10% al 13% anual).</li>
+<li><strong>Territorio y costo de vida:</strong> Las diferencias salariales nominales entre regiones son considerables (casi 40 puntos), pero al descontar el costo de vida regional (usando la Canasta Básica Total), esta brecha se reduce a menos de 10 puntos, lo que indica que gran parte de la "ventaja patagónica" o "desventaja del Norte" se debe a los precios locales. Los polos energéticos y mineros muestran efectos distintos: mientras los petroleros ya impactan positivamente en el salario real (+5,5%), los mineros aún no lo hacen de manera significativa.</li>
+<li><strong>Welfare Ratio:</strong> El salario mediano de una asalariada a jornada completa cubre solo tres cuartas partes de la canasta básica de una familia tipo en el último trimestre, lo que resalta la necesidad de múltiples ingresos en el hogar para superar la línea de pobreza.</li>
 </ul>
-<p><strong>Limitaciones:</strong> salarios declarados en una encuesta de hogares urbana; período corto (nueve trimestres) y de fuerte
-cambio macroeconómico; los efectos son asociaciones, no efectos causales; la corrección de Heckman depende de las
-restricciones de exclusión; la canasta regional mide el costo de vida de los hogares de ingresos bajos y medios.</p>
-<p><strong>Líneas futuras:</strong> extender el análisis a nuevas ondas de la EPH para estudiar la evolución de largo plazo de los
-determinantes y del <em>welfare ratio</em>; seguir trimestre a trimestre la prima de los polos mineros; incorporar registros
-administrativos (SIPA) para medir la empresa concreta.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6787d44c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>2. Predicción a corto plazo y estabilidad:</strong></p>
+<ul>
+<li><strong>Capacidad predictiva:</strong> El modelo LightGBM explica alrededor del 44% de la variabilidad del salario relativo en el 1T2026, y el 40% para mujeres "nuevas" que el modelo no había visto. La regresión lineal explica un 40%. La validación con origen móvil mostró un R² entre 0,44 y 0,55.</li>
+<li><strong>Estabilidad del mercado:</strong> Aunque la composición de la población asalariada se mantuvo estable (PSI máximo de 0,039), los "precios" del mercado sí cambiaron, como la prima del empleo registrado, que disminuyó significativamente entre 2024 y 2025. Esto subraya la importancia de <strong>reentrenar el modelo cada trimestre</strong> para mantener su relevancia y precisión.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b5cae701">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>3. Brecha de género y transparencia retributiva:</strong></p>
+<ul>
+<li><strong>Brecha no explicada:</strong> La brecha salarial observada es del 4,8%, pero la brecha no explicada por las características observadas asciende al 6,4%, superando el umbral del 5% de la Directiva (UE) 2023/970. Esta brecha se concentra en el sector privado de mercado (comercio, industria, servicios profesionales y financieros) y en ciertas ocupaciones (operativas, profesionales), lo que orienta a las empresas sobre dónde focalizar las auditorías de nómina.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=314201a1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>4. Herramienta de referencia salarial:</strong></p>
+<ul>
+<li><strong>Bandas salariales:</strong> El modelo se traduce en una herramienta que proporciona bandas salariales con un 85% de cobertura real, siendo más estrechas en el empleo registrado debido a una mayor regulación. La herramienta permite a las empresas aplicar el modelo a su nómina para auditarla y a los organismos públicos para monitorear el mercado laboral femenino.</li>
+<li><strong>Funcionalidades de la aplicación:</strong> La aplicación (app/app.py) permite a usuarios no especialistas en datos estimar el salario de mercado para un perfil específico, auditar la nómina de una empresa, analizar primas salariales territoriales, entender el impacto de los cuidados y comparar el mercado laboral argentino con Brasil y España.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3cf30659">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>5. Perspectiva comparada (parte II, Argentina, Brasil y España):</strong></p>
+<ul>
+<li><strong>Factores comunes, intensidad diferente:</strong> Los tres países valoran factores similares como la educación, calificación y condiciones del empleo, pero con distinta intensidad. La educación tiene un retorno del 5% en Argentina, 6% en Brasil y 4% en España. Brasil muestra una escala salarial más empinada por calificación, mientras que España premia más la experiencia.</li>
+<li><strong>Informalidad y jornada parcial:</strong> La informalidad impacta más en América Latina, con el empleo registrado pagando 44% más en Argentina y 34% en Brasil. La jornada parcial en Argentina y Brasil se asocia con un salario por hora 27-28% mayor, concentrándose en sectores como docencia y salud, a diferencia de España.</li>
+<li><strong>Brecha de género comparada:</strong> La brecha no explicada a igual perfil supera el 5% en los tres países (6% en Argentina, 11% en España y 15% en Brasil).</li>
+<li><strong>Poder de compra:</strong> Una hora de trabajo de la asalariada mediana en 2024 (en USD PPA) es de 6,3 en Argentina, 4,2 en Brasil y 16,8 en España. Con un empleo a jornada completa, la asalariada mediana argentina cubriría 1,2 veces la línea de pobreza internacional, la brasileña 0,8 veces y la española 3,2 veces.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6dc571a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Aportes del trabajo:</strong></p>
+<ul>
+<li>Genera información sobre el salario de mercado, la prima real de las ciudades y el impacto de los recursos naturales que no está disponible en los cuadros oficiales.</li>
+<li>Construye variables no preguntadas directamente en la EPH (ej. hijos propios, educación de la pareja).</li>
+<li>Valida la estabilidad del mercado de trabajo mediante validación fuera de tiempo, origen móvil y pruebas estadísticas.</li>
+<li>Ofrece una comparación internacional rigurosa utilizando las mismas variables y métricas.</li>
+<li>Convierte el modelo predictivo en una herramienta práctica para la gestión salarial y la auditoría de género en empresas y organismos públicos.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ef562ae2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Limitaciones:</strong> El estudio se basa en salarios declarados en encuestas de hogares urbanas, abarca un período corto de fuerte cambio macroeconómico, y los efectos son asociaciones no causales. La corrección de Heckman depende de las restricciones de exclusión, y la canasta regional mide el costo de vida para hogares de ingresos bajos y medios.</p>
+<p><strong>Líneas futuras:</strong> el análisis podría extenderse a nuevas ondas de la EPH para estudiar los cambios en los determinantes y del welfare ratio. También se podría seguir trimestre a trimestre la prima de los polos mineros e incorporar registros administrativos (SIPA) para medir la empresa concreta.</p>
 </div>
 </div>
 </div>
