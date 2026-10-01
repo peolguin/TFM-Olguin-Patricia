@@ -1,16 +1,18 @@
-# Determinantes y predicción del salario de las mujeres ocupadas en Argentina (2024-2026)
+# Determinantes y predicción del salario de las mujeres asalariadas en Argentina (2024-2026)
 
-### Una comparación con Brasil y España y una herramienta de referencia salarial
+### Una herramienta de referencia salarial validada en el tiempo y comparada con Brasil y España
 
-**Trabajo Fin de Máster** · Máster en Data Science, Big Data & Business Analytics · Universidad Complutense de Madrid
+**Trabajo Fin de Máster** · Máster en Data Science, Big Data & Business Analytics · Universidad Complutense de Madrid  
 **Autora:** Patricia Olguín · 2026
 
-**Aplicación en línea:** [tfm-olguin-patricia.streamlit.app](https://tfm-olguin-patricia.streamlit.app/)
+**Aplicación en línea:** [tfm-olguin-patricia.streamlit.app](https://tfm-olguin-patricia.streamlit.app/)  
+**Datos (Google Drive):** [carpeta TFM](https://drive.google.com/drive/folders/1z812oAmY-nK_2uj-UJn6aJZZK1XbdWo9?usp=sharing)  
 **Notebook en Colab:** [formato ipynb](https://colab.research.google.com/github/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.ipynb) y [html](https://peolguin.github.io/TFM-Olguin-Patricia/notebook/TFM_salarios_mujeres_Argentina.html)
 
 ## De qué trata
 
-El trabajo intenta determinar los factores que influyen en el salario de las mujeres ocupadas en Argentina y predecir sus valores en el corto plazo. Tiene en cuenta una perspectiva comparativa con otros países y presenta una herramienta de referencia salarial Aprovecha los microdatos de la Encuesta Permanente de Hogares (EPH) calculada por el Instituto Nacional de Estadísticas y Censos, a fin de obtener información de manera indirecta porque los cuadros publicados no responden las siguientes preguntas:
+La Encuesta Permanente de Hogares (EPH) del INDEC es la fuente más usada para estudiar el mercado de trabajo argentino,
+pero sus cuadros publicados no responden preguntas como:
 
 * ¿cuánto paga el mercado por un perfil concreto, y con qué margen?
 * ¿cuánto de la diferencia salarial entre ciudades desaparece al descontar el costo de vida?
@@ -19,7 +21,11 @@ El trabajo intenta determinar los factores que influyen en el salario de las muj
 * ¿cuánto de la brecha de género no se explica por el perfil, y supera el umbral del 5% de la Directiva europea de
   transparencia retributiva?
 
-En la **parte I** identifica los determinantes del salario de las mujeres asalariadas en Argentina, comprueba si sirven para predecir el salario a un año y convierte el modelo en una **herramienta de referencia salarial** que puede usar una empresa (para auditar su nómina) o un organismo público (para monitorear el mercado de trabajo femenino). En la **parte II** repite el análisis con las mismas variables en Brasil y España, para distinguir lo que es propio del mercado argentino de lo que es general.
+Este trabajo aprovecha los microdatos para obtener esa información indirecta. En la **parte I** identifica los
+determinantes del salario de las mujeres asalariadas en Argentina, comprueba si sirven para predecir el salario a un año
+y convierte el modelo en una **herramienta de referencia salarial** que puede usar una empresa (para auditar su nómina) o
+un organismo público (para monitorear el mercado de trabajo femenino). En la **parte II** repite el análisis con las
+mismas variables en Brasil y España, para distinguir lo que es propio del mercado argentino de lo que es general.
 
 * **Datos:**
   * EPH, bases de personas y hogares, 1T2024 a 1T2026;
@@ -45,7 +51,7 @@ En la **parte I** identifica los determinantes del salario de las mujeres asalar
 | Carpeta / archivo | Contenido |
 |---|---|
 | notebook/TFM\_salarios\_mujeres\_Argentina.ipynb | El trabajo completo en un solo notebook: **parte I**, Argentina (secciones 1-10); **parte II**, comparación con Brasil y España (sección 11); conclusiones generales (sección 12). Unos 15 minutos de ejecución, más 15 la primera vez para preparar las bases de Brasil y España |
-| funciones\_tfm.py | Funciones auxiliares que importa el notebook |
+| funciones\_tfm.py | Funciones auxiliares que importa el notebook (organizadas como NuestrasFunciones.py del módulo de Minería de datos) |
 | app/app.py | Aplicación Streamlit |
 | modelos/ | Modelo entrenado y tablas de resultados que usa la aplicación (los genera el notebook) |
 | requirements.txt | Librerías de la aplicación, con las versiones con que se entrenó el modelo |
@@ -56,8 +62,8 @@ En la **parte I** identifica los determinantes del salario de las mujeres asalar
 ## Cómo reproducir el trabajo en Google Colab
 
 1. **Datos.**
-   * Los microdatos no se suben a GitHub: están en la carpeta de Google Drive TFM, compartida con los tutores.
-   * Abra el enlace de la carpeta y elija **Organizar**, **Agregar acceso directo** y **Mi unidad**. El notebook la encuentra
+   * Los microdatos no se suben a GitHub: están en la [carpeta TFM de Google Drive](https://drive.google.com/drive/folders/1z812oAmY-nK_2uj-UJn6aJZZK1XbdWo9?usp=sharing), compartida con los tutores.
+   * Abra el enlace de la carpeta, haga clic derecho sobre ella y elija **Organizar**, **Agregar acceso directo** y **Mi unidad**. El notebook la encuentra
      en MyDrive/TFM.
 2. **Notebook.** Abra el [notebook en Colab](https://colab.research.google.com/github/peolguin/TFM-Olguin-Patricia/blob/main/notebook/TFM_salarios_mujeres_Argentina.ipynb)
    y elija el menú **Entorno de ejecución**, opción **Ejecutar todas**.
