@@ -127,6 +127,25 @@ streamlit run app/app.py
 
 Los salarios son declarados en una encuesta y los efectos son asociaciones, no efectos causales.
 
+## Conclusiones
+
+1. **Determinantes y su peso.** El empleo pesa más que la formación: las condiciones del puesto (registro, jornada,
+   ocupación y actividad) concentran el 63% de lo que explica el modelo; la educación y la experiencia, el 14%. Los
+   cuidados se pagan en empleo y en horas, no en el precio de la hora. Descontando el costo de vida, la distancia entre
+   regiones cae de 39 a 9 puntos; los polos petroleros ya elevan el salario real de las mujeres y los mineros, todavía
+   no. El salario mediano cubre tres cuartos de la canasta básica de una familia tipo.
+2. **Predicción a corto plazo y estabilidad.** El modelo explica el 44% del salario relativo de un trimestre nuevo. La
+   composición de la población es estable, pero los "precios" cambian: hay que reentrenar cada trimestre.
+3. **Brecha de género.** Observada del 4,8% y del 6,4% a igual perfil, por encima del umbral del 5% de la Directiva
+   (UE) 2023/970; se concentra en el sector privado de mercado.
+4. **Herramienta de referencia salarial.** Bandas del 90% con una cobertura real del 85% en el 1T2026 y una aplicación
+   para estimar salarios, auditar nóminas y monitorear el mercado de trabajo femenino.
+5. **Perspectiva comparada.** Argentina, Brasil y España premian los mismos factores con distinta intensidad, y en los
+   tres la brecha a igual perfil supera el 5%.
+
+**Líneas futuras:** extender el análisis a nuevas ondas de la EPH, seguir la prima de los polos mineros e incorporar
+registros administrativos (SIPA) para medir el efecto de la empresa concreta y del desempeño personal.
+
 ## Fuentes
 
 * INDEC: Encuesta Permanente de Hogares continua; Canasta Básica Total por región; Índice de Precios al Consumidor.
